@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>移動は「よねざわ乗るパス」で｜第4回 360°よねざわオープンファクトリー</title>
+<meta name="description" content="第4回 360°よねざわオープンファクトリー（2026年9月10日〜13日）。米沢市内全路線バス1日乗り放題のよねざわ乗るパス（520円）を活用した移動・モデルコース・特典案内。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FAF7F2;          /* 和紙クリーム */
+  --bg-2:#F2EDE3;        /* やや濃いクリーム */
+  --bg-card:#FFFFFF;
+  --ink:#1A1A1A;         /* 主要テキスト */
+  --ink-2:#454341;       /* セカンダリ */
+  --ink-3:#8C8678;       /* ミュート */
+  --line:#E5DDCC;        /* ライン */
+  --accent:#C8302F;      /* 朱赤（米沢らしさ） */
+  --accent-d:#A12423;
+  --accent-2:#1F3A5F;    /* 藍補色 */
+  --soft-y:#F8E5C2;      /* 薄黄 */
+  --tag-on:#3C6E47;      /* 実施日○ */
+  --tag-off:#B0A998;     /* オフ */
+  --tag-unk:#B0832D;     /* 要確認 */
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;text-size-adjust:100%}
+body{font-family:"Noto Sans JP",system-ui,-apple-system,"Hiragino Sans",sans-serif;background:var(--bg);color:var(--ink);line-height:1.9;font-weight:400;letter-spacing:.02em;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none;transition:opacity .2s}
+a:hover{opacity:.7}
+
+.serif{font-family:"Noto Serif JP",serif}
+
+/* ===== NAV ===== */
+nav.topnav{position:sticky;top:0;background:rgba(250,247,242,.92);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:80}
+nav.topnav .inner{max-width:1240px;margin:0 auto;padding:18px 32px;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+nav.topnav .brand{display:flex;align-items:baseline;gap:12px;color:var(--accent);font-weight:700;letter-spacing:.04em}
+nav.topnav .brand .deg{font-size:20px}
+nav.topnav .brand .name{font-size:13px}
+nav.topnav .brand .sub{font-size:11px;color:var(--ink-3);font-weight:400}
+nav.topnav ul{list-style:none;display:flex;gap:28px;font-size:13px;font-weight:500}
+nav.topnav ul a{color:var(--ink-2)}
+nav.topnav .cta{font-size:12px;background:var(--ink);color:white;padding:9px 18px;border-radius:0;font-weight:500;letter-spacing:.06em}
+nav.topnav .cta:hover{background:var(--accent);opacity:1}
+
+/* ===== HERO ===== */
+.hero{padding:110px 32px 96px;text-align:center;position:relative;overflow:hidden;background:var(--bg)}
+.hero::before{content:"";position:absolute;top:8%;left:50%;transform:translateX(-50%);width:480px;height:480px;border:1px solid var(--line);border-radius:50%;pointer-events:none;opacity:.6}
+.hero::after{content:"360°";position:absolute;top:6%;left:50%;transform:translateX(-50%);font-family:"Noto Serif JP",serif;font-weight:600;font-size:220px;color:transparent;-webkit-text-stroke:1px rgba(200,48,47,.06);letter-spacing:-.04em;line-height:1;pointer-events:none}
+.hero .container{position:relative;z-index:2;max-width:880px;margin:0 auto}
+.hero .eyebrow{display:inline-flex;align-items:center;gap:14px;font-size:12px;letter-spacing:.18em;color:var(--accent);font-weight:500;margin-bottom:36px}
+.hero .eyebrow::before,.hero .eyebrow::after{content:"";width:32px;height:1px;background:var(--accent);opacity:.6}
+.hero h1.tagline{font-family:"Noto Serif JP",serif;font-weight:600;font-size:60px;line-height:1.35;letter-spacing:.04em;color:var(--ink);margin-bottom:12px}
+.hero h1.tagline .accent{color:var(--accent)}
+.hero .lead-en{font-size:13px;letter-spacing:.24em;color:var(--ink-3);font-weight:400;margin-bottom:40px;text-transform:uppercase}
+.hero .lead{font-size:16px;color:var(--ink-2);max-width:680px;margin:0 auto 56px;line-height:2.0}
+.hero .lead strong{color:var(--accent);font-weight:500}
+.hero .ctas{display:flex;justify-content:center;gap:16px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:18px 36px;font-size:13.5px;font-weight:500;letter-spacing:.08em;transition:all .25s;cursor:pointer;border:none;border-radius:0;font-family:inherit}
+.btn-primary{background:var(--ink);color:white}
+.btn-primary:hover{background:var(--accent);opacity:1}
+.btn-ghost{background:transparent;color:var(--ink);border:1px solid var(--ink)}
+.btn-ghost:hover{background:var(--ink);color:white;opacity:1}
+.btn .arrow{font-size:14px;transition:transform .25s}
+.btn:hover .arrow{transform:translateX(4px)}
+
+.event-date{display:inline-block;margin-top:48px;padding:10px 24px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);font-size:13px;letter-spacing:.12em;color:var(--ink-2);font-weight:400}
+.event-date strong{color:var(--accent);font-weight:600;letter-spacing:.06em;margin-right:6px}
+
+/* ===== SECTION ===== */
+section{padding:120px 32px;position:relative}
+.container{max-width:1180px;margin:0 auto}
+.section-head{text-align:center;margin-bottom:72px;max-width:780px;margin-left:auto;margin-right:auto}
+.section-head .num{display:block;font-family:"Noto Serif JP",serif;font-size:13px;color:var(--accent);font-weight:600;letter-spacing:.16em;margin-bottom:18px}
+.section-head h2{font-family:"Noto Serif JP",serif;font-weight:600;font-size:36px;line-height:1.55;color:var(--ink);margin-bottom:24px;letter-spacing:.04em}
+.section-head .lead{font-size:14.5px;color:var(--ink-2);max-width:680px;margin:0 auto;line-height:2.0}
+
+/* ===== PASS ===== */
+.pass-section{background:var(--bg)}
+.pass-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:64px;align-items:center}
+.pass-visual{background:var(--bg-card);border:1px solid var(--line);padding:48px 40px;position:relative}
+.pass-visual::before{content:"NORU-PASS";position:absolute;top:18px;right:24px;font-size:11px;letter-spacing:.24em;color:var(--ink-3);font-weight:500}
+.pass-visual .label{font-size:11.5px;letter-spacing:.18em;color:var(--accent);font-weight:500;margin-bottom:14px}
+.pass-visual h3{font-family:"Noto Serif JP",serif;font-size:36px;font-weight:600;color:var(--ink);margin-bottom:8px;letter-spacing:.02em}
+.pass-visual .sub{font-size:13px;color:var(--ink-3);margin-bottom:36px}
+.pass-visual .price-block{padding:24px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-bottom:24px}
+.pass-visual .price-row{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px}
+.pass-visual .price-row:last-child{margin-bottom:0}
+.pass-visual .price-row .who{font-size:12.5px;color:var(--ink-2)}
+.pass-visual .price-row .yen{font-family:"Noto Serif JP",serif;font-weight:600}
+.pass-visual .price-row .yen .num{font-size:24px;color:var(--ink)}
+.pass-visual .price-row .yen .unit{font-size:12px;color:var(--ink-3);margin-left:4px}
+.pass-visual .price-row.main .who{font-size:14px;color:var(--accent);font-weight:500}
+.pass-visual .price-row.main .yen .num{font-size:36px;color:var(--accent)}
+.pass-visual .meta-list{font-size:12px;color:var(--ink-3);line-height:1.9}
+.pass-info h3{font-family:"Noto Serif JP",serif;font-size:24px;font-weight:600;color:var(--ink);margin-bottom:28px;line-height:1.6;letter-spacing:.04em}
+.pass-info .features{display:grid;gap:24px}
+.pass-info .feat{padding:24px 0;border-bottom:1px solid var(--line)}
+.pass-info .feat:last-child{border-bottom:none}
+.pass-info .feat-num{display:inline-block;font-family:"Noto Serif JP",serif;font-size:12px;color:var(--accent);font-weight:600;letter-spacing:.14em;margin-bottom:8px}
+.pass-info .feat h4{font-size:15.5px;font-weight:500;color:var(--ink);margin-bottom:6px}
+.pass-info .feat p{font-size:13.5px;color:var(--ink-2);line-height:1.9}
+.collab-note{display:flex;align-items:center;gap:18px;margin-top:36px;padding:22px 26px;background:var(--bg-card);border:1px dashed var(--accent);text-decoration:none;color:inherit;transition:background .2s}
+.collab-note:hover{background:#FFFAF3;opacity:1}
+.collab-tag{flex-shrink:0;font-size:10.5px;letter-spacing:.18em;color:var(--accent);font-weight:600;font-family:"Noto Serif JP",serif}
+.collab-text{flex:1;font-size:13px;color:var(--ink-2);line-height:1.85}
+.collab-arrow{flex-shrink:0;font-size:16px;color:var(--accent);transition:transform .2s}
+.collab-note:hover .collab-arrow{transform:translateX(4px)}
+
+/* ===== MAP ===== */
+.map-section{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.map-wrap{background:var(--bg-card);border:1px solid var(--line);padding:8px;position:relative}
+.map-wrap iframe{display:block;width:100%;height:620px;border:0}
+.map-meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px;margin-top:48px}
+.map-meta .item{padding:24px 0;border-top:1px solid var(--line)}
+.map-meta .item .num{display:block;font-family:"Noto Serif JP",serif;font-size:32px;font-weight:600;color:var(--accent);margin-bottom:6px;letter-spacing:.02em}
+.map-meta .item .label{font-size:12.5px;color:var(--ink-2);letter-spacing:.06em}
+.map-note{text-align:center;font-size:12px;color:var(--ink-3);margin-top:24px;letter-spacing:.04em}
+.map-note a{color:var(--accent);border-bottom:1px solid currentColor}
+
+/* ===== TIMETABLE ===== */
+.timetable-section{background:var(--bg);border-top:1px solid var(--line)}
+.tt-tabs{position:relative}
+.tt-tabs input[type=radio]{position:absolute;opacity:0;pointer-events:none}
+.tt-tablist{display:flex;border-bottom:1px solid var(--line);margin-bottom:32px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.tt-tablist label{padding:14px 26px;font-size:13px;color:var(--ink-3);cursor:pointer;border-bottom:2px solid transparent;letter-spacing:.06em;transition:color .2s,border-color .2s;white-space:nowrap;font-family:"Noto Serif JP",serif;font-weight:500}
+.tt-tablist label:hover{color:var(--ink)}
+#tt-right:checked ~ .tt-tablist label[for=tt-right],
+#tt-left:checked ~ .tt-tablist label[for=tt-left],
+#tt-gakuen:checked ~ .tt-tablist label[for=tt-gakuen],
+#tt-bansei:checked ~ .tt-tablist label[for=tt-bansei]{color:var(--accent);border-bottom-color:var(--accent)}
+.tt-panel{display:none}
+#tt-right:checked ~ .tt-panels [data-tab=right],
+#tt-left:checked ~ .tt-panels [data-tab=left],
+#tt-gakuen:checked ~ .tt-panels [data-tab=gakuen],
+#tt-bansei:checked ~ .tt-panels [data-tab=bansei]{display:block}
+.tt-panel-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin-bottom:16px}
+.tt-panel table{width:100%;min-width:720px;border-collapse:collapse;font-size:12.5px;background:var(--bg-card);border:1px solid var(--line)}
+.tt-panel th,.tt-panel td{padding:10px 8px;text-align:center;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.tt-panel th{background:var(--bg-2);color:var(--ink);font-weight:500;font-size:11.5px;letter-spacing:.04em}
+.tt-panel td:first-child,.tt-panel th:first-child{text-align:left;font-weight:500;color:var(--ink-2);background:var(--bg-2);position:sticky;left:0;min-width:180px}
+.tt-panel tbody tr:hover{background:#FBF8F1}
+.tt-panel .hub{background:#FFFBF0!important;font-weight:600;color:var(--accent)!important}
+.tt-route-desc{font-size:12.5px;color:var(--ink-3);margin-bottom:18px;letter-spacing:.04em;line-height:1.85}
+.tt-source{font-size:11.5px;color:var(--ink-3);margin-top:24px;text-align:center;letter-spacing:.04em}
+.tt-source a{color:var(--accent);border-bottom:1px solid currentColor}
+
+/* ===== CLUSTERS ===== */
+.cluster-section{background:var(--bg)}
+.cluster{margin-bottom:80px;padding-bottom:80px;border-bottom:1px solid var(--line)}
+.cluster:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.cluster-head{display:grid;grid-template-columns:auto 1fr auto;gap:32px;align-items:end;margin-bottom:40px;padding-bottom:24px;border-bottom:1px solid var(--line)}
+.cluster-head .alpha{font-family:"Noto Serif JP",serif;font-size:64px;font-weight:600;color:var(--accent);line-height:1;letter-spacing:.04em}
+.cluster-head .info h3{font-family:"Noto Serif JP",serif;font-size:24px;font-weight:600;color:var(--ink);margin-bottom:4px;letter-spacing:.04em}
+.cluster-head .info .stop-line{font-size:12.5px;color:var(--ink-3);letter-spacing:.04em}
+.cluster-head .badge{font-size:11px;color:var(--ink-3);letter-spacing:.12em;padding:6px 14px;border:1px solid var(--line);align-self:center}
+.biz-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:0;border-left:1px solid var(--line);border-top:1px solid var(--line)}
+.biz-card{display:flex;flex-direction:column;padding:28px 28px 24px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);transition:background .2s;cursor:pointer;background:var(--bg-card);position:relative;text-decoration:none;color:inherit}
+.biz-card:hover{background:#FCFAF5;opacity:1}
+.biz-card .cat{font-size:10.5px;letter-spacing:.14em;color:var(--ink-3);margin-bottom:14px;font-weight:500}
+.biz-card .cat::before{content:"●";font-size:8px;margin-right:6px;color:var(--accent)}
+.biz-card .name{font-family:"Noto Serif JP",serif;font-size:18px;font-weight:600;color:var(--ink);margin-bottom:8px;line-height:1.55;letter-spacing:.02em}
+.biz-card .addr{font-size:11.5px;color:var(--ink-3);margin-bottom:16px;line-height:1.7}
+.biz-card .walk{display:inline-block;font-size:11px;color:var(--accent);font-weight:500;letter-spacing:.08em;padding:4px 10px;border:1px solid var(--accent);margin-bottom:14px;align-self:flex-start}
+.biz-card .days{display:flex;gap:5px;margin-bottom:16px}
+.biz-card .day{flex:1;text-align:center;font-size:10.5px;font-weight:500;padding:5px 0;letter-spacing:.05em}
+.biz-card .day.on{background:var(--tag-on);color:white}
+.biz-card .day.off{background:transparent;color:var(--tag-off);border:1px solid var(--line)}
+.biz-card .day.unk{background:transparent;color:var(--tag-unk);border:1px solid var(--tag-unk)}
+.biz-card .summary{font-size:12.5px;color:var(--ink-2);line-height:1.85;margin-bottom:auto;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
+.biz-card .link{font-size:11.5px;color:var(--ink);font-weight:500;letter-spacing:.08em;margin-top:18px;display:flex;align-items:center;gap:6px;padding-top:14px;border-top:1px solid var(--line)}
+.biz-card .link .arrow{transition:transform .2s}
+.biz-card:hover .link .arrow{transform:translateX(4px);color:var(--accent)}
+.biz-card.unverified{background:repeating-linear-gradient(45deg,var(--bg-card),var(--bg-card) 8px,#FBF8F1 8px,#FBF8F1 16px)}
+.biz-card.unverified .name::after{content:"要確認";display:inline-block;font-family:"Noto Sans JP",sans-serif;font-size:9.5px;color:var(--tag-unk);background:transparent;border:1px solid var(--tag-unk);padding:1px 6px;margin-left:8px;vertical-align:middle;font-weight:500;letter-spacing:.06em}
+
+/* ===== COURSES ===== */
+.courses-section{background:var(--ink);color:#F0EDE6;padding:140px 32px}
+.courses-section .section-head .num{color:var(--soft-y)}
+.courses-section .section-head h2{color:#FFFFFF}
+.courses-section .section-head .lead{color:rgba(240,237,230,.7)}
+.course-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:32px}
+.course-card{padding:36px 32px;border:1px solid rgba(255,255,255,.1);transition:border .2s,background .2s}
+.course-card:hover{border-color:rgba(255,255,255,.3);background:rgba(255,255,255,.02)}
+.course-card .tag{display:inline-block;font-size:10.5px;color:var(--soft-y);letter-spacing:.14em;padding:5px 14px;border:1px solid rgba(248,229,194,.4);margin-bottom:22px}
+.course-card h3{font-family:"Noto Serif JP",serif;font-size:20px;font-weight:600;color:#FFFFFF;margin-bottom:10px;line-height:1.55;letter-spacing:.04em}
+.course-card .meta{font-size:11.5px;color:rgba(240,237,230,.55);margin-bottom:28px;letter-spacing:.06em}
+.course-card ol{list-style:none;counter-reset:s;display:grid;gap:14px}
+.course-card ol li{counter-increment:s;padding-left:36px;position:relative;font-size:13px;line-height:1.85;color:rgba(240,237,230,.85)}
+.course-card ol li::before{content:counter(s,decimal-leading-zero);position:absolute;left:0;top:2px;font-family:"Noto Serif JP",serif;font-size:11px;color:var(--soft-y);font-weight:600;letter-spacing:.08em}
+
+/* ===== COUPON ===== */
+.coupon-section{background:var(--bg)}
+.coupon-hero{display:grid;grid-template-columns:1.1fr 1fr;gap:64px;align-items:center;margin-bottom:80px}
+.coupon-hero .copy h3{font-family:"Noto Serif JP",serif;font-size:32px;font-weight:600;color:var(--ink);margin-bottom:24px;line-height:1.6;letter-spacing:.04em}
+.coupon-hero .copy h3 .accent{color:var(--accent)}
+.coupon-hero .copy p{font-size:14.5px;color:var(--ink-2);line-height:2.05}
+.coupon-mock{background:var(--bg-card);border:2px dashed var(--accent);padding:48px 36px;text-align:center;position:relative}
+.coupon-mock::before{content:"NORU-PASS PRIVILEGE";position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--bg);padding:4px 16px;font-size:10.5px;letter-spacing:.16em;color:var(--accent);font-weight:500}
+.coupon-mock h4{font-family:"Noto Serif JP",serif;font-size:26px;font-weight:600;color:var(--ink);margin-bottom:14px;line-height:1.6;letter-spacing:.04em}
+.coupon-mock h4 .accent{color:var(--accent)}
+.coupon-mock p{font-size:13px;color:var(--ink-2);margin-bottom:20px}
+.coupon-mock .pass-illust{font-family:"Noto Serif JP",serif;font-size:60px;color:var(--accent);margin:8px 0;letter-spacing:.04em}
+.coupon-tiers{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:0;border-left:1px solid var(--line);border-top:1px solid var(--line)}
+.tier{padding:36px 32px;text-align:center;background:var(--bg-card);border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.tier .stars{font-size:18px;color:var(--accent);margin-bottom:14px;letter-spacing:4px}
+.tier .req{font-size:11.5px;color:var(--ink-3);letter-spacing:.12em;margin-bottom:14px}
+.tier h4{font-family:"Noto Serif JP",serif;font-size:17px;font-weight:600;color:var(--ink);margin-bottom:10px;line-height:1.6;letter-spacing:.02em}
+.tier p{font-size:12px;color:var(--ink-2);line-height:1.85}
+.coupon-foot{text-align:center;font-size:12px;color:var(--ink-3);margin-top:40px;letter-spacing:.04em}
+
+/* ===== OUTRANGE ===== */
+.outrange-section{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.outrange-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:0;border-left:1px solid var(--line);border-top:1px solid var(--line)}
+.out-card{padding:24px 22px;background:var(--bg-card);border-right:1px solid var(--line);border-bottom:1px solid var(--line);text-align:left;transition:background .2s}
+.out-card:hover{background:#FBF8F1;opacity:1}
+.out-card .area{display:inline-block;font-size:10.5px;color:var(--accent);letter-spacing:.14em;font-weight:500;margin-bottom:10px;padding:3px 10px;border:1px solid var(--accent)}
+.out-card .name{font-family:"Noto Serif JP",serif;font-size:16px;font-weight:600;color:var(--ink);margin-bottom:6px;line-height:1.6}
+.out-card .addr{font-size:11.5px;color:var(--ink-3);margin-bottom:10px;line-height:1.7}
+.out-card .arrow{font-size:11px;color:var(--ink-2);letter-spacing:.08em}
+.outrange-note{margin-top:48px;padding:24px 28px;background:var(--bg-card);border-left:3px solid var(--accent);font-size:13px;color:var(--ink-2);line-height:1.9}
+.outrange-note strong{color:var(--accent)}
+
+/* ===== ACCESS ===== */
+.access-section{background:var(--bg)}
+.access-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0;border-left:1px solid var(--line);border-top:1px solid var(--line)}
+.access-card{padding:36px 28px;background:var(--bg-card);border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.access-card .num{display:block;font-family:"Noto Serif JP",serif;font-size:12px;font-weight:600;color:var(--accent);letter-spacing:.16em;margin-bottom:14px}
+.access-card h4{font-family:"Noto Serif JP",serif;font-size:16px;font-weight:600;color:var(--ink);margin-bottom:10px;line-height:1.6}
+.access-card p{font-size:12.5px;color:var(--ink-2);line-height:1.85}
+
+/* ===== FOOTER ===== */
+footer{background:var(--ink);color:rgba(240,237,230,.7);padding:64px 32px 48px;text-align:center;font-size:12.5px;line-height:2.0;letter-spacing:.04em}
+footer .ft-brand{font-family:"Noto Serif JP",serif;font-size:18px;color:#FFFFFF;margin-bottom:12px;letter-spacing:.06em}
+footer .ft-tag{font-size:11px;letter-spacing:.18em;color:var(--soft-y);margin-bottom:32px}
+footer .ft-info{margin-bottom:20px}
+footer .ft-info strong{color:white;font-weight:500}
+footer .ft-fine{font-size:10.5px;color:rgba(240,237,230,.4);margin-top:28px;letter-spacing:.06em}
+footer a{color:var(--soft-y);border-bottom:1px solid rgba(248,229,194,.3)}
+
+/* ===== Responsive ===== */
+@media(max-width:960px){
+  .hero h1.tagline{font-size:40px}
+  .hero::after{font-size:140px}
+  .hero{padding:80px 24px 72px}
+  section{padding:80px 24px}
+  .section-head h2{font-size:26px}
+  .pass-grid,.coupon-hero{grid-template-columns:1fr;gap:36px}
+  .cluster-head{grid-template-columns:auto 1fr;row-gap:8px}
+  .cluster-head .alpha{font-size:48px}
+  .cluster-head .badge{grid-column:1/-1;justify-self:start}
+  nav.topnav ul{display:none}
+  nav.topnav .inner{padding:14px 20px}
+  .biz-card{padding:24px 22px}
+  .map-wrap iframe{height:480px}
+}
+@media(max-width:560px){
+  .hero h1.tagline{font-size:32px}
+  .hero::after{font-size:100px}
+  .ctas{flex-direction:column}
+  .ctas .btn{width:100%;justify-content:center}
+}
+</style>
+</head>
+<body>
+
+<nav class="topnav">
+  <div class="inner">
+    <a href="#top" class="brand">
+      <span class="deg">360°</span>
+      <span>
+        <span class="name">よねざわオープンファクトリー</span><br>
+        <span class="sub">米沢をひらく。｜YONEZAWA</span>
+      </span>
+    </a>
+    <ul>
+      <li><a href="#pass">乗るパス</a></li>
+      <li><a href="#map">マップ</a></li>
+      <li><a href="#timetable">時刻表</a></li>
+      <li><a href="#companies">参加企業</a></li>
+      <li><a href="#courses">モデルコース</a></li>
+      <li><a href="#coupon">特典</a></li>
+    </ul>
+    <a href="#access" class="cta">パスを入手 →</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="container">
+    <span class="eyebrow">移動・特典案内　Mobility & Benefits</span>
+    <h1 class="tagline">
+      米沢を、<span class="accent">ひらく。</span><br>
+      バスに乗って、めぐる。
+    </h1>
+    <div class="lead-en">Yonezawa Open Factory × Noru-Pass</div>
+    <p class="lead">第4回 360°よねざわオープンファクトリーは、米沢市内全路線バス1日乗り放題の<strong>よねざわ乗るパス（520円）</strong>と連動。城下中心部に集まる参加企業を、循環バス・市民バスで気軽に巡る回遊型イベントとして開催します。</p>
+    <div class="ctas">
+      <a class="btn btn-primary" href="#access">乗るパスを入手する<span class="arrow">→</span></a>
+      <a class="btn btn-ghost" href="#companies">参加企業を見る<span class="arrow">→</span></a>
+    </div>
+    <div class="event-date"><strong>2026.09.10 — 09.13</strong>　木・金・土・日　9:00–17:00</div>
+  </div>
+</header>
+
+<section id="pass" class="pass-section">
+  <div class="container">
+    <div class="section-head">
+      <span class="num">01　よねざわ乗るパス</span>
+      <h2>520円で、米沢の路線バスを<br>1日乗り放題に。</h2>
+      <p class="lead">米沢上杉文化施設協議会発行の1日券。市街地循環バス・学園都市線・万世線・窪田行・白布小野川行が乗り放題。一年中いつでも、お得に米沢を巡れます。</p>
+    </div>
+    <div class="pass-grid">
+      <div class="pass-visual">
+        <div class="label">YONEZAWA NORU-PASS</div>
+        <h3>よねざわ乗るパス</h3>
+        <p class="sub">米沢全路線バス 一日乗り放題券</p>
+        <div class="price-block">
+          <div class="price-row main">
+            <span class="who">大人</span>
+            <span class="yen"><span class="num">520</span><span class="unit">円／税込</span></span>
+          </div>
+          <div class="price-row">
+            <span class="who">小学生以下／障がい者割引</span>
+            <span class="yen"><span class="num">260</span><span class="unit">円</span></span>
+          </div>
+          <div class="price-row">
+            <span class="who">小学生以下かつ障がい者割引</span>
+            <span class="yen"><span class="num">130</span><span class="unit">円</span></span>
+          </div>
+        </div>
+        <p class="meta-list">対象路線：市街地循環（右回り・左回り）／学園都市線／万世線／窪田行／白布小野川行<br>有効期間：購入日1日限り　／　発行：米沢上杉文化施設協議会</p>
+      </div>
+      <div class="pass-info">
+        <h3>乗るパスで、できること。</h3>
+        <div class="features">
+          <div class="feat">
+            <span class="feat-num">FEATURE 01</span>
+            <h4>市内全路線バスが乗り放題</h4>
+            <p>循環右回り・左回り／学園都市線／万世線／窪田行（平日）／白布小野川行（米沢市内区間）の主要全路線をカバー。城下から外周まで自在に移動。</p>
+          </div>
+          <div class="feat">
+            <span class="feat-num">FEATURE 02</span>
+            <h4>一年中ご利用可能・購入当日1日有効</h4>
+            <p>季節を問わずいつでも販売。米沢駅・道の駅・観光案内所等で手軽に入手でき、購入したその日1日を自由に巡れます。</p>
+          </div>
+          <div class="feat">
+            <span class="feat-num">FEATURE 03</span>
+            <h4>「よねざわウォーク」マップ無料配布</h4>
+            <p>米沢鶴城高校生が選ぶバス停近くのおススメスポットを4か国語（日・英・台・越）で掲載。観光案内所等で無料配布中。</p>
+          </div>
+          <div class="feat">
+            <span class="feat-num">FEATURE 04</span>
+            <h4>温泉地まで別途料金で延長可</h4>
+            <p>白布温泉まで＋790〜850円、小野川温泉まで＋410〜440円。日帰り温泉も合わせて楽しめます。</p>
+          </div>
+        </div>
+        <a href="#coupon" class="collab-note">
+          <span class="collab-tag">× COLLABORATION</span>
+          <span class="collab-text">今回は『第4回 360°よねざわオープンファクトリー』とコラボ中。乗るパスをご持参の方限定で、参加企業から特典が受けられます。</span>
+          <span class="collab-arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="map" class="map-section">
+  <div class="container">
+    <div class="section-head">
+      <span class="num">02　路線・停留所マップ</span>
+      <h2>米沢駅東口を起点に<br>城下を、ぐるりとめぐる。</h2>
+      <p class="lead">第4回360°よねざわオープンファクトリー実行委員会が作成したGoogleマイマップを埋め込み。<strong>地図上のピンをクリックすると、各企業の詳細情報が表示されます。</strong></p>
+    </div>
+    <div class="map-wrap">
+      <iframe
+        src="https://www.google.com/maps/d/embed?mid=1LshjXkX_M9OyNwaQEbPO1QMRw78v4es&ehbc=2E312F"
+        loading="lazy"
+        title="第4回 360°よねざわオープンファクトリー MAP">
+      </iframe>
+    </div>
+    <div class="map-meta">
+      <div class="item"><span class="num">31</span><span class="label">参加企業／団体</span></div>
+      <div class="item"><span class="num">12</span><span class="label">のるパス到達企業</span></div>
+      <div class="item"><span class="num">8</span><span class="label">停留所エリア</span></div>
+      <div class="item"><span class="num">4</span><span class="label">日間の会期</span></div>
+    </div>
+    <p class="map-note">マップを別ウィンドウで開く：<a href="https://www.google.com/maps/d/viewer?mid=1LshjXkX_M9OyNwaQEbPO1QMRw78v4es" target="_blank">Google マイマップで見る →</a></p>
+  </div>
+</section>
+
+<section id="timetable" class="timetable-section">
+  <div class="container">
+    <div class="section-head">
+      <span class="num">03　路線バス時刻表</span>
+      <h2>のるパス対象路線の<br>主要停留所と発時刻。</h2>
+      <p class="lead">参加企業の最寄バス停を米沢駅前東口起点に並べた抜粋表。タブを切り替えて4路線をご確認ください。1便〜9便（朝6時台〜夕方17時台）を掲載。</p>
+    </div>
+    <div class="tt-tabs">
+      <input type="radio" name="tt" id="tt-right" checked>
+      <input type="radio" name="tt" id="tt-left">
+      <input type="radio" name="tt" id="tt-gakuen">
+      <input type="radio" name="tt" id="tt-bansei">
+      <div class="tt-tablist">
+        <label for="tt-right">循環バス 右回り</label>
+        <label for="tt-left">循環バス 左回り</label>
+        <label for="tt-gakuen">学園都市線</label>
+        <label for="tt-bansei">万世線</label>
+      </div>
+      <div class="tt-panels">
+        <div class="tt-panel" data-tab="right">
+          <p class="tt-route-desc">米沢駅前東口 → 市立病院 → 大町一丁目 → 上杉神社前 → 御廟所西口 → 中央 → ナセBA前 → 米沢駅前東口（全11便／1日1〜2便間隔）</p>
+          <div class="tt-panel-wrap">
+            <table>
+              <thead><tr><th>バス停</th><th>1便</th><th>2便</th><th>3便</th><th>4便</th><th>5便</th><th>6便</th><th>7便</th><th>8便</th><th>9便</th></tr></thead>
+              <tbody>
+                <tr class="hub"><td>米沢駅前（東口・始発）</td><td>6:50</td><td>8:02</td><td>9:22</td><td>10:38</td><td>11:54</td><td>13:24</td><td>14:40</td><td>15:56</td><td>17:12</td></tr>
+                <tr><td>市立病院・三友堂病院前</td><td>7:01</td><td>8:13</td><td>9:33</td><td>10:49</td><td>12:05</td><td>13:35</td><td>14:51</td><td>16:07</td><td>17:23</td></tr>
+                <tr><td>大町一丁目</td><td>7:04</td><td>8:16</td><td>9:36</td><td>10:52</td><td>12:08</td><td>13:38</td><td>14:54</td><td>16:10</td><td>17:26</td></tr>
+                <tr><td>税務署前</td><td>7:05</td><td>8:17</td><td>9:37</td><td>10:53</td><td>12:09</td><td>13:39</td><td>14:55</td><td>16:11</td><td>17:27</td></tr>
+                <tr><td>上杉神社前(上杉城史苑)</td><td>7:07</td><td>8:19</td><td>9:39</td><td>10:55</td><td>12:11</td><td>13:41</td><td>14:57</td><td>16:13</td><td>17:29</td></tr>
+                <tr><td>城南二丁目</td><td>7:10</td><td>8:22</td><td>9:42</td><td>10:58</td><td>12:14</td><td>13:44</td><td>15:00</td><td>16:16</td><td>17:32</td></tr>
+                <tr><td>御廟所西口</td><td>7:15</td><td>8:27</td><td>9:47</td><td>11:03</td><td>12:19</td><td>13:49</td><td>15:05</td><td>16:21</td><td>17:37</td></tr>
+                <tr><td>中央一丁目</td><td>7:37</td><td>8:49</td><td>10:09</td><td>11:25</td><td>12:41</td><td>14:11</td><td>15:27</td><td>16:43</td><td>17:59</td></tr>
+                <tr><td>ナセBA前</td><td>7:39</td><td>8:51</td><td>10:11</td><td>11:27</td><td>12:43</td><td>14:13</td><td>15:29</td><td>16:45</td><td>18:01</td></tr>
+                <tr><td>大町</td><td>7:40</td><td>8:52</td><td>10:12</td><td>11:28</td><td>12:44</td><td>14:14</td><td>15:30</td><td>16:46</td><td>18:02</td></tr>
+                <tr class="hub"><td>米沢駅前（東口・帰着）</td><td>7:49</td><td>9:01</td><td>10:21</td><td>11:37</td><td>12:53</td><td>14:23</td><td>15:39</td><td>16:55</td><td>18:11</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="tt-panel" data-tab="left">
+          <p class="tt-route-desc">米沢駅前東口 → 大町 → ナセBA前 → 中央 → 御廟所西口 → 上杉神社前 → 大町一丁目 → 城南二丁目 → 市立病院 → 米沢駅前東口（右回りの逆経路／全11便）</p>
+          <div class="tt-panel-wrap">
+            <table>
+              <thead><tr><th>バス停</th><th>1便</th><th>2便</th><th>3便</th><th>4便</th><th>5便</th><th>6便</th><th>7便</th><th>8便</th><th>9便</th></tr></thead>
+              <tbody>
+                <tr class="hub"><td>米沢駅前（東口・始発）</td><td>6:50</td><td>8:02</td><td>9:30</td><td>10:45</td><td>12:15</td><td>13:30</td><td>14:45</td><td>16:00</td><td>17:20</td></tr>
+                <tr><td>大町</td><td>6:59</td><td>8:11</td><td>9:39</td><td>10:54</td><td>12:24</td><td>13:39</td><td>14:54</td><td>16:09</td><td>17:29</td></tr>
+                <tr><td>ナセBA前</td><td>7:00</td><td>8:12</td><td>9:40</td><td>10:55</td><td>12:25</td><td>13:40</td><td>14:55</td><td>16:10</td><td>17:30</td></tr>
+                <tr><td>中央一丁目</td><td>7:02</td><td>8:14</td><td>9:42</td><td>10:57</td><td>12:27</td><td>13:42</td><td>14:57</td><td>16:12</td><td>17:32</td></tr>
+                <tr><td>御廟所西口</td><td>7:24</td><td>8:36</td><td>10:04</td><td>11:19</td><td>12:49</td><td>14:04</td><td>15:19</td><td>16:34</td><td>17:54</td></tr>
+                <tr><td>上杉神社前(上杉城史苑)</td><td>7:32</td><td>8:44</td><td>10:12</td><td>11:27</td><td>12:57</td><td>14:12</td><td>15:27</td><td>16:42</td><td>18:02</td></tr>
+                <tr><td>税務署前</td><td>7:34</td><td>8:46</td><td>10:14</td><td>11:29</td><td>12:59</td><td>14:14</td><td>15:29</td><td>16:44</td><td>18:04</td></tr>
+                <tr><td>大町一丁目</td><td>7:35</td><td>8:47</td><td>10:15</td><td>11:30</td><td>13:00</td><td>14:15</td><td>15:30</td><td>16:45</td><td>18:05</td></tr>
+                <tr><td>城南二丁目</td><td>7:29</td><td>8:41</td><td>10:09</td><td>11:24</td><td>12:54</td><td>14:09</td><td>15:24</td><td>16:39</td><td>17:59</td></tr>
+                <tr><td>市立病院・三友堂病院前</td><td>7:39</td><td>8:51</td><td>10:19</td><td>11:34</td><td>13:04</td><td>14:19</td><td>15:34</td><td>16:49</td><td>18:09</td></tr>
+                <tr class="hub"><td>米沢駅前（東口・帰着）</td><td>7:50</td><td>9:02</td><td>10:30</td><td>11:45</td><td>13:15</td><td>14:30</td><td>15:45</td><td>17:00</td><td>18:20</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="tt-panel" data-tab="gakuen">
+          <p class="tt-route-desc">米沢駅前 → 東一丁目 → 通町 → 興譲館高校 → 城南 → 上杉神社前 → 中央 → ナセBA前 → 米沢駅前（A〜F の6パターン運行・全11便）</p>
+          <div class="tt-panel-wrap">
+            <table>
+              <thead><tr><th>バス停</th><th>1便</th><th>2便</th><th>3便</th><th>4便</th><th>5便</th><th>6便</th><th>7便</th><th>8便</th><th>9便</th><th>10便</th></tr></thead>
+              <tbody>
+                <tr class="hub"><td>米沢駅前（始発）</td><td>7:25</td><td>8:10</td><td>9:00</td><td>10:00</td><td>11:15</td><td>12:20</td><td>13:30</td><td>15:10</td><td>16:20</td><td>17:50</td></tr>
+                <tr><td>東一丁目</td><td>7:26</td><td>8:11</td><td>9:01</td><td>10:01</td><td>11:16</td><td>12:21</td><td>13:31</td><td>15:11</td><td>16:21</td><td>17:51</td></tr>
+                <tr><td>本町</td><td>—</td><td>8:29</td><td>9:28</td><td>—</td><td>11:34</td><td>—</td><td>13:58</td><td>—</td><td>16:39</td><td>—</td></tr>
+                <tr><td>城南二丁目</td><td>7:45</td><td>8:38</td><td>9:37</td><td>10:20</td><td>11:43</td><td>12:40</td><td>14:07</td><td>15:30</td><td>16:48</td><td>18:10</td></tr>
+                <tr><td>上杉神社前</td><td>7:47</td><td>8:40</td><td>9:39</td><td>10:22</td><td>11:45</td><td>12:42</td><td>14:09</td><td>15:32</td><td>16:50</td><td>18:12</td></tr>
+                <tr><td>中央三丁目</td><td>—</td><td>—</td><td>—</td><td>10:26</td><td>—</td><td>12:46</td><td>—</td><td>15:36</td><td>16:54</td><td>18:16</td></tr>
+                <tr><td>ナセBA前</td><td>7:50</td><td>8:43</td><td>9:42</td><td>10:36</td><td>11:48</td><td>13:04</td><td>14:12</td><td>15:55</td><td>17:04</td><td>18:26</td></tr>
+                <tr class="hub"><td>米沢駅前（帰着）</td><td>7:55</td><td>8:48</td><td>9:47</td><td>10:41</td><td>11:53</td><td>13:09</td><td>14:17</td><td>16:00</td><td>17:09</td><td>18:31</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="tt-panel" data-tab="bansei">
+          <p class="tt-route-desc">米沢スキー場前（北部山岳地）⇄ 万世村 ⇄ 桑山団地 ⇄ 東一丁目 ⇄ 米沢駅前東口（米沢駅周辺の便のみ抜粋）<br><strong>日曜・祝日・お盆・年末年始は運休</strong>（5〜11月の第1日曜は運行）</p>
+          <div class="tt-panel-wrap">
+            <table>
+              <thead><tr><th>バス停</th><th>下り 第1便</th><th>下り 第2便</th><th>下り 第3便</th><th>下り 第4便</th><th>下り 第5便</th><th>上り 第1便</th><th>上り 第2便</th><th>上り 第3便</th></tr></thead>
+              <tbody>
+                <tr class="hub"><td>米沢駅前（東口）</td><td>7:45</td><td>9:00</td><td>10:00</td><td>11:10</td><td>13:15</td><td>—</td><td>—</td><td>—</td></tr>
+                <tr><td>東一丁目</td><td>7:48</td><td>9:03</td><td>10:03</td><td>11:13</td><td>13:18</td><td>8:17</td><td>9:31</td><td>10:33</td></tr>
+                <tr><td>桑山公園前</td><td>7:55</td><td>9:10</td><td>10:10</td><td>11:20</td><td>13:25</td><td>8:10</td><td>9:24</td><td>10:26</td></tr>
+                <tr><td>万世小学校前</td><td>8:02</td><td>9:17</td><td>10:17</td><td>11:27</td><td>13:32</td><td>8:03</td><td>9:17</td><td>10:19</td></tr>
+                <tr><td>梓川</td><td>8:10</td><td>9:25</td><td>10:25</td><td>11:35</td><td>13:40</td><td>7:46</td><td>9:00</td><td>10:02</td></tr>
+                <tr><td>米沢スキー場前</td><td>9:43</td><td>—</td><td>12:33</td><td>—</td><td>—</td><td>—</td><td>7:35</td><td>—</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="tt-route-desc" style="margin-top:14px"><strong>注：</strong>万世線時刻は概略抜粋。1日合計9便（下り）・9便（上り）運行。実際の便割・全停留所は米沢市公式ダイヤをご確認ください。</p>
+        </div>
+      </div>
+    </div>
+    <p class="tt-source">出典：米沢市公式 夏ダイヤ（令和8年4月1日改正・R8.4.1〜11.30）　<a href="https://www.city.yonezawa.yamagata.jp/soshiki/2/1007/4/2/5/index.html" target="_blank">米沢市役所 時刻表ページで全便を確認 →</a></p>
+  </div>
+</section>
+
+<section id="companies" class="cluster-section">
+  <div class="container">
+    <div class="section-head">
+      <span class="num">04　参加企業</span>
+      <h2>8つのバス停エリアで<br>巡る、米沢のものづくり。</h2>
+      <p class="lead">バス停を中心に参加企業をグルーピング。各カードをクリックすると、事業者の公式サイトに遷移します。</p>
+    </div>
+
+    <!-- A: 米沢駅前東口 -->
+    <div class="cluster">
+      <div class="cluster-head">
+        <div class="alpha">A</div>
+        <div class="info">
+          <h3>米沢駅前（東口）</h3>
+          <div class="stop-line">循環右回り 1番 ／ 左回り 1番 ／ 万世線終点 ／ 学園都市線 1番 ／ 窪田行</div>
+        </div>
+        <div class="badge">起点ハブ</div>
+      </div>
+      <div class="biz-grid">
+        <a class="biz-card unverified" href="#" target="_blank">
+          <div class="cat">食品</div>
+          <div class="name">有限会社 新杵屋</div>
+          <div class="addr">東3-1-1（米沢駅東口 徒歩1分）</div>
+          <span class="walk">徒歩 1分</span>
+          <div class="days"><span class="day on">10木</span><span class="day on">11金</span><span class="day on">12土</span><span class="day on">13日</span></div>
+          <div class="summary">炊飯工場見学＋お弁当製造体験（10:00〜、60〜120分）※実施日要確認</div>
+          <div class="link">公式サイト<span class="arrow">→</span></div>
+        </a>
+        <a class="biz-card" href="https://nitorito.com/" target="_blank">
+          <div class="cat">米沢織</div>
+          <div class="name">株式会社 nitorito</div>
+          <div class="addr">米沢駅東口前（昨年実績）</div>
+          <span class="walk">徒歩 1分</span>
+          <div class="days"><span class="day unk">10木</span><span class="day unk">11金</span><span class="day unk">12土</span><span class="day unk">13日</span></div>
+          <div class="summary">米沢織×現代生活のプロダクトブランド。開催日要事業者確認。</div>
+          <div class="link">公式サイト<span class="arrow">→</span></div>
+        </a>
+      </div>
+    </div>
+
+    <!-- B: 大町 -->
+    <div class="cluster">
+      <div class="cluster-head">
+        <div class="alpha">B</div>
+        <div class="info">
+          <h3>大町エリア</h3>
+          <div class="stop-line">循環右回り 大町一丁目（9番）・大町（39番） ／ 左回り 大町（6番）・大町一丁目（36番）</div>
+        </div>
+        <div class="badge">城下商人町</div>
+      </div>
+      <div class="biz-grid">
+        <a class="biz-card" href="https://kakurikimiso.com/" target="_blank">
+          <div class="cat">発酵醸造</div>
+          <div class="name">株式会社 花角味噌醸造</div>
+          <div class="addr">大町1-2-23</div>
+          <span class="walk">大町一丁目 徒歩 2分</span>
+          <div class="days"><span class="day on">10木</span><span class="day on">11金</span><span class="day on">12土</span><span class="day on">13日</span></div>
+          <div class="summary">4種味噌食べ比べ／FDみそ汁詰め放題／きゅうり一本漬け／親子きゅうり漬けWS</div>
+          <div class="link">公式サイト<span class="arrow">→</span></div>
+        </a>
+        <a class="biz-card" href="https://shop.hirayama-magobee.com/" target="_blank">
+          <div class="cat">発酵醸造</div>
+          <div class="name">株式会社 平山孫兵衛商店</div>
+          <div class="addr">大町2-2-22</div>
+          <span class="walk">大町一丁目 徒歩 3分</span>
+          <div class="days"><span class="day off">10木</span><span class="day on">11金</span><span class="day on">12土</span><span class="day off">13日</span></div>
+          <div class="summary">しょうゆ・調味料の味比べ（10:00–15:00、12〜13時除く）</div>
+          <div class="link">公式サイト<span class="arrow">→</span></div>
+        </a>
+        <a class="biz-card unverified" href="https://www.sake-toko.co.jp/" target="_blank">
+          <div class="cat">発酵醸造</div>
+          <div class="name">株式会社 小嶋総本店</div>
+          <div class="addr">大町近接（昨年実績）</div>
+          <span class="walk">徒歩 3〜5分</span>
+          <div class="days"><span class="day unk">10木</span><span class="day unk">11金</span><span class="day unk">12土</span><span class="day unk">13日</span></div>
+          <div class="summary">銘酒「東光」醸造元。住所・開催日要事業者確認。</div>
+          <div class="link">公式サイト<span class="arrow">→</span></div>
+        </a>
+        <a class="biz-card unverified" href="https://www.sake-toko.co.jp/" target="_blank">
+          <div class="cat">発酵醸造</div>
+          <div class="name">酒造資料館 東光の酒蔵</div>
+          <div class="addr">大町近接（小嶋総本店と同運営）</div>
+          <span class="walk">徒歩 3〜5分</span>
+          <div class="days"><span class="day unk">10木</span><span class="day unk">11金</span><span class="day unk">12土</span><span class="day unk">13日</span></div>
+          <div class="summary">酒蔵見学・試飲。開催日要事業者確認。</div>
+          <div class="link">公式サイト<span class="arrow">→</span></div>
+        </a>
+      </div>
+    </div>
+
+    <!-- C: 上杉神社前 -->
+    <div class="cluster">
+      <div class="cluster-head">
+        <div class="alpha">C</div>
+        <div class="info">
+          <h3>上杉神社前エリア</h3>
+          <div class="stop-line">循環右回り 11番 ／ 左回り 34番 ／ 学園都市線 26番</div>
+        </div>
+        <div class="badge">米沢織エリア</div>
+      </div>
+      <div class="biz-grid">
+        <a class="biz-card" href="https://namikatatextile.com" target="_blank">
+          <div class="cat">米沢織</div>
+          <div class="name">行方織物 有限会社</div>
+          <div class="addr">松が岬2-4-8</div>
+          <span class="walk">徒歩 5分</span>
+          <div class="days"><span class="day on">10木</span><span class="day on">11金</span><span class="day on">12土</span><span class="day off">13日</span></div>
+          <div class="summary">工場見学・販売・展示・くるみボタンWS（10:00/11:00/14:00/15:00ほか）</div>
+          <div class="link">公式サイト<span class="arrow">→</span></div>
+        </a>
+        <a class="biz-card" href="https://nitta-yonezawa.com/" target="_blank">
+          <div class="cat">米沢織</div>
+          <div class="name">よねざわ新田（株式会社 新田）</div>
+          <div class="addr">松が岬2-3-36</div>
+          <span class="walk">徒歩 6分</span>
+          <div class="days"><span class="day on">10木</span><span class="day on">11金</span><span class="day on">12土</span><span class="day on">13日</span></div>
+          <div class="summary">製造工程見学／紅花染め体験／ミニタペストリー／手織りブローチ／ギャラリー＆ショップ</div>
+          <div class="link">公式サイト<span class="arrow">→</span></div>
+        </a>
+        <a class="biz-card" href="https://www.kawasaki-print.com/" target="_blank">
+          <div class="cat">印刷</div>
+          <div class="name">株式会社 カワサキ印刷</div>
+          <div class="addr">松が岬2-3-17</div>
+          <span class="walk">徒歩 5分</span>
+          <div class="days"><span class="day on">10木</span><span class="day on">11金</span><span class="day off">12土</span><span class="day off">13日</span></div>
+          <div class="summary">9/12(土)・9/13(日)は実施外。木金のみの出展。</div>
+          <div class="link">公式サイト<span class="arrow">→</span></div>
+        </a>
+        <a class="biz-card unverified" href="https://yamakuchi.co.jp/" target="_blank">
+          <div class="cat">米沢織</div>
+          <div class="name">山口織物鷹山堂 有限会社</div>
+          <div class="addr">松が岬近接（昨年実績）</div>
+          <span class="walk">徒歩 5分</span>
+          <div class="days"><span class="day unk">10木</span><span class="day unk">11金</span><span class="day unk">12土</span><span class="day unk">13日</span></div>
+          <div class="summary">EC「yozando.jp」運営。住所・開催日要事業者確認。</div>
+          <div class="link">公式サイト<span class="arrow">→</span></div>
+        </a>
+        <a class="biz-card unverified" href="https://www.parcomode.com/" target="_blank">
+          <div class="cat">米沢織</div>
+          <div class="name">株式会社 パルコモード</div>
+          <div class="addr">松が岬近接（昨年実績）</div>
+          <span class="walk">徒歩 5分</span>
+          <div class="days"><span class="day unk">10木</span><span class="day unk">11金</span><span class="day unk">12土</span><span class="day unk">13日</span></div>
+          <div class="summary">米沢織テキスタイル＆プロダクト。住所・開催日要事業者確認。</div>
+          <div class="link">公式サイト<span class="arrow">→</span></div>
+        </a>
+      </div>
+    </div>
+
+    <!-- D: 御廟所西口 -->
+    <div class="cluster">
+      <div class="cluster-head">
+        <div class="alpha">D</div>
+        <div class="info">
+          <h3>御廟所西口エリア</h3>
+          <div class="stop-line">循環右回り 18番 ／ 左回り 27番</div>
+        </div>
+        <div class="badge">上杉家廟所</div>
+      </div>
+      <div class="biz-grid">
+        <a class="biz-card" href="https://www.wakuwakukan.co.jp/" target="_blank">
+          <div class="cat">米沢織</div>
+          <div class="name">染織工房わくわく舘／齋英織物</div>
+          <div class="addr">御廟1-2-37</div>
+          <span class="walk">徒歩 3分</span>
+          <div class="days"><span class="day on">10木</span><span class="day on">11金</span><span class="day on">12土</span><span class="day on">13日</span></div>
+          <div class="summary">藍染め体験（10:00〜120分／各日10名）／工房見学（10:00–16:00）</div>
+          <div class="link">公式サイト<span class="arrow">→</span></div>
+        </a>
+        <a class="biz-card" href="https://silky-living.co.jp/" target="_blank">
+          <div class="cat">米沢織</div>
+          <div class="name">株式会社 シルキーリビング</div>
+          <div class="addr">直江町6-12</div>
+          <span class="walk">徒歩 4分</span>
+          <div class="days"><span class="day on">10木</span><span class="day on">11金</span><span class="day on">12土</span><span class="day on">13日</span></div>
+          <div class="summary">米沢織の生地・カーテン・インテリア。通期工房オープン（要事業者確認）</div>
+          <div class="link">公式サイト<span class="arrow">→</span></div>
+        </a>
+      </div>
+    </div>
+
+    <!-- E: 中央 -->
+    <div class="cluster">
+      <div class="cluster-head">
+        <div class="alpha">E</div>
+        <div class="info">
+          <h3>中央エリア</h3>
+          <div class="stop-line">循環右回り 中央一丁目（36番） ／ 左回り 中央一丁目（10番）</div>
+        </div>
+        <div class="badge">市役所周辺</div>
+      </div>
+      <div class="biz-grid">
+        <a class="biz-card unverified" href="#" target="_blank">
+          <div class="cat">米沢織</div>
+          <div class="name">粟野商事株式会社／JUYOUKAN</div>
+          <div class="addr">中央1-7-32</div>
+          <span class="walk">徒歩 2分</span>
+          <div class="days"><span class="day on">10木</span><span class="day on">11金</span><span class="day on">12土</span><span class="day on">13日</span></div>
+          <div class="summary">織元ブランド「季織苑工房」候補。公式HP要事業者確認。</div>
+          <div class="link">公式サイト<span class="arrow">→</span></div>
+        </a>
+      </div>
+    </div>
+
+    <!-- F: 城南 -->
+    <div class="cluster">
+      <div class="cluster-head">
+        <div class="alpha">F</div>
+        <div class="info">
+          <h3>城南エリア</h3>
+          <div class="stop-line">循環右回り 城南二丁目（13番） ／ 学園都市線 24番</div>
+        </div>
+        <div class="badge">山大正門エリア</div>
+      </div>
+      <div class="biz-grid">
+        <a class="biz-card" href="http://konken-orimono.jp" target="_blank">
+          <div class="cat">米沢織</div>
+          <div class="name">近賢織物 有限会社</div>
+          <div class="addr">城南3-1-48</div>
+          <span class="walk">徒歩 3分</span>
+          <div class="days"><span class="day on">10木</span><span class="day on">11金</span><span class="day on">12土</span><span class="day off">13日</span></div>
+          <div class="summary">9/13(日)は実施外。9/10木〜12土の出展。</div>
+          <div class="link">公式サイト<span class="arrow">→</span></div>
+        </a>
+      </div>
+    </div>
+
+    <!-- G: 本町 -->
+    <div class="cluster">
+      <div class="cluster-head">
+        <div class="alpha">G</div>
+        <div class="info">
+          <h3>本町エリア</h3>
+          <div class="stop-line">学園都市線 本町（19番／23番）</div>
+        </div>
+        <div class="badge">米沢織直売</div>
+      </div>
+      <div class="biz-grid">
+        <a class="biz-card unverified" href="https://www.facebook.com/yoneori.origin/" target="_blank">
+          <div class="cat">米沢織</div>
+          <div class="name">米沢織物直売所おりじん</div>
+          <div class="addr">本町1-5-21-1階</div>
+          <span class="walk">徒歩 1分</span>
+          <div class="days"><span class="day unk">10木</span><span class="day unk">11金</span><span class="day unk">12土</span><span class="day unk">13日</span></div>
+          <div class="summary">米沢織のアウトレット直売所。開催日要事業者確認。</div>
+          <div class="link">Facebookページ<span class="arrow">→</span></div>
+        </a>
+      </div>
+    </div>
+
+    <!-- H: 東1丁目 -->
+    <div class="cluster">
+      <div class="cluster-head">
+        <div class="alpha">H</div>
+        <div class="info">
+          <h3>東一丁目エリア</h3>
+          <div class="stop-line">万世線 東一丁目（29番） ／ 学園都市線 東一丁目（2番）</div>
+        </div>
+        <div class="badge">駅東部</div>
+      </div>
+      <div class="biz-grid">
+        <a class="biz-card" href="https://www.mikipulley.co.jp/JP/Beltec/index.html" target="_blank">
+          <div class="cat">工業</div>
+          <div class="name">三木ベルテック株式会社</div>
+          <div class="addr">泉町2-2-2819</div>
+          <span class="walk">徒歩 5分</span>
+          <div class="days"><span class="day on">10木</span><span class="day on">11金</span><span class="day off">12土</span><span class="day off">13日</span></div>
+          <div class="summary">9/12(土)・9/13(日)は実施外。木金のみの出展。</div>
+          <div class="link">公式サイト<span class="arrow">→</span></div>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="courses" class="courses-section">
+  <div class="container">
+    <div class="section-head">
+      <span class="num">05　モデルコース</span>
+      <h2>初めての米沢を、<br>4つの楽しみ方で。</h2>
+      <p class="lead">乗るパス1枚で完結する4つの巡り方。城下の織物・発酵・ものづくりを、半日・終日それぞれのリズムで。</p>
+    </div>
+    <div class="course-grid">
+      <div class="course-card">
+        <span class="tag">土曜・半日</span>
+        <h3>A. 大町〜上杉神社〜御廟ぐるり</h3>
+        <p class="meta">所要 約3.5h　／　訪問可 6社</p>
+        <ol>
+          <li>9:22 米沢駅前東口（循環右回り 3便）出発</li>
+          <li>9:36 大町一丁目 着 ▶ 花角味噌＋平山孫兵衛</li>
+          <li>10:55 上杉神社前 ▶ 行方織物＋よねざわ新田</li>
+          <li>12:19 御廟所西口 ▶ わくわく舘＋シルキーリビング</li>
+          <li>13:15 米沢駅前東口 着 ▶ 昼食・お土産</li>
+        </ol>
+      </div>
+      <div class="course-card">
+        <span class="tag">土曜・半日</span>
+        <h3>B. 米沢駅〜中央〜大町</h3>
+        <p class="meta">所要 約2.5h　／　訪問可 4社</p>
+        <ol>
+          <li>9:00 米沢駅東口 ▶ 新杵屋（徒歩1分）</li>
+          <li>10:00 循環左回り 3便 → 大町</li>
+          <li>10:12 大町 ▶ 花角味噌＋平山孫兵衛</li>
+          <li>10:57 大町 → 中央一丁目 ▶ 粟野商事</li>
+          <li>11:45 米沢駅前東口 着</li>
+        </ol>
+      </div>
+      <div class="course-card">
+        <span class="tag">土曜・終日</span>
+        <h3>C. A＋B＋自由時間</h3>
+        <p class="meta">所要 約7h　／　訪問可 8〜10社</p>
+        <ol>
+          <li>午前：Aコース（9:22〜13:15）</li>
+          <li>昼食：米沢駅前 or ナセBA前 周辺</li>
+          <li>午後：Bコース＋徒歩散策</li>
+          <li>夕方：上杉神社・城史苑で自由散策</li>
+          <li>17:00 米沢駅前東口 解散</li>
+        </ol>
+      </div>
+      <div class="course-card">
+        <span class="tag">日曜・半日</span>
+        <h3>D. 日曜限定オープン3社＋お土産</h3>
+        <p class="meta">所要 約3h　／　確実訪問 3社</p>
+        <ol>
+          <li>9:22 米沢駅前東口（循環右回り 3便）</li>
+          <li>9:36 大町一丁目 ▶ 花角味噌（4日全日）</li>
+          <li>9:47 上杉神社前 ▶ よねざわ新田（4日全日）</li>
+          <li>11:03 御廟所西口 ▶ わくわく舘（4日全日）</li>
+          <li>12:53 米沢駅前東口 着</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="coupon" class="coupon-section">
+  <div class="container">
+    <div class="section-head">
+      <span class="num">06　360°特典クーポン</span>
+      <h2>のるパスを、見せるだけ。<br>各社のおもてなしが、ひらく。</h2>
+      <p class="lead">専用バス予算を「事業者体験の充実」に振り替え。のるパス1枚で、米沢の作り手たちのオリジナル特典が解放されます。</p>
+    </div>
+    <div class="coupon-hero">
+      <div class="copy">
+        <h3>仕組み</h3>
+        <p>360°参加企業の各店頭で<strong>よねざわ乗るパスを提示するだけ</strong>。各社オリジナルの特典（試食・小物プレゼント・10%OFF など）が、その場で受けられます。さらに3社・5社と回ると、米沢オープンファクトリー限定ノベルティ／米沢牛グッズの抽選券がもらえるスタンプラリーも連動。乗るパス1枚で、巡るほどに、得するように。</p>
+      </div>
+      <div class="coupon-mock">
+        <h4>のるパス提示で<br><span class="accent">「◯◯プレゼント」</span></h4>
+        <p>各参加企業がオリジナル特典を用意。</p>
+        <div class="pass-illust">→</div>
+      </div>
+    </div>
+    <div class="coupon-tiers">
+      <div class="tier">
+        <div class="stars">★</div>
+        <div class="req">1社訪問</div>
+        <h4>事業者別<br>オリジナル特典</h4>
+        <p>のるパス提示で各社の試食・小物プレゼント・割引などをその場で進呈</p>
+      </div>
+      <div class="tier">
+        <div class="stars">★★★</div>
+        <div class="req">3社スタンプ</div>
+        <h4>限定ノベルティ<br>進呈</h4>
+        <p>米沢オープンファクトリー限定の手ぬぐい・栞などをプレゼント</p>
+      </div>
+      <div class="tier">
+        <div class="stars">★★★★★</div>
+        <div class="req">5社スタンプ</div>
+        <h4>米沢牛・米沢織<br>抽選券</h4>
+        <p>米沢牛セット・米沢織ストール等が当たる抽選券をプレゼント</p>
+      </div>
+    </div>
+    <p class="coupon-foot">※特典内容は事業者と最終調整中。確定次第チラシ・WEBで公開します。</p>
+  </div>
+</section>
+
+<section id="outrange" class="outrange-section">
+  <div class="container">
+    <div class="section-head">
+      <span class="num">07　のるパス対象外エリア</span>
+      <h2>外周エリアの参加企業は<br>車・タクシーでアクセス。</h2>
+      <p class="lead">花沢・八幡原・川井・竹井・窪田に所在する以下9社は、のるパスでは到達できません。自家用車・タクシー・レンタサイクルでのアクセスとなります。</p>
+    </div>
+    <div class="outrange-grid">
+      <a class="out-card" href="https://www.frontier.maxell.co.jp" target="_blank">
+        <span class="area">花沢</span>
+        <div class="name">マクセルフロンティア</div>
+        <div class="addr">花沢3091-6</div>
+        <span class="arrow">公式サイト →</span>
+      </a>
+      <a class="out-card" href="https://www.aita-kouyouju.com/" target="_blank">
+        <span class="area">花沢</span>
+        <div class="name">アイタ工業</div>
+        <div class="addr">花沢町2845</div>
+        <span class="arrow">公式サイト →</span>
+      </a>
+      <a class="out-card" href="https://nt-shinsei.com/" target="_blank">
+        <span class="area">花沢</span>
+        <div class="name">ニューテックシンセイ</div>
+        <div class="addr">大字花沢3075-1</div>
+        <span class="arrow">公式サイト →</span>
+      </a>
+      <a class="out-card" href="https://kawa-prt.com/" target="_blank">
+        <span class="area">花沢</span>
+        <div class="name">川島印刷</div>
+        <div class="addr">大字花沢221-2</div>
+        <span class="arrow">公式サイト →</span>
+      </a>
+      <a class="out-card" href="https://mitsuiya.jp/" target="_blank">
+        <span class="area">八幡原</span>
+        <div class="name">三井屋工業</div>
+        <div class="addr">八幡原3-446-12</div>
+        <span class="arrow">公式サイト →</span>
+      </a>
+      <a class="out-card" href="https://yumemado.com/" target="_blank">
+        <span class="area">八幡原</span>
+        <div class="name">アルス（夢窓）</div>
+        <div class="addr">八幡原2-444-7</div>
+        <span class="arrow">公式サイト →</span>
+      </a>
+      <a class="out-card" href="https://eishin-bankin.co.jp/" target="_blank">
+        <span class="area">川井</span>
+        <div class="name">栄進鈑金製作所</div>
+        <div class="addr">大字川井491-7</div>
+        <span class="arrow">公式サイト →</span>
+      </a>
+      <a class="out-card" href="http://www.beko.co.jp" target="_blank">
+        <span class="area">竹井</span>
+        <div class="name">米澤佐藤畜産</div>
+        <div class="addr">大字竹井425</div>
+        <span class="arrow">公式サイト →</span>
+      </a>
+      <a class="out-card" href="https://inoueseiko.co.jp" target="_blank">
+        <span class="area">窪田</span>
+        <div class="name">井上精工</div>
+        <div class="addr">窪田町窪田1073-2</div>
+        <span class="arrow">公式サイト →</span>
+      </a>
+    </div>
+    <div class="outrange-note">
+      <strong>井上精工（窪田）について：</strong>のるパス対象「窪田行」がありますが、<strong>平日のみ運行</strong>のため土日（9/12・13）は利用不可。9/10木・11金の平日ならアクセス可能です。
+    </div>
+  </div>
+</section>
+
+<section id="access" class="access-section">
+  <div class="container">
+    <div class="section-head">
+      <span class="num">08　販売場所</span>
+      <h2>よねざわ乗るパスは<br>こちらの5箇所で。</h2>
+      <p class="lead">紙券のみ／2026年版よりデジタル版は廃止。事前購入推奨。お問い合わせは（一社）米沢観光コンベンション協会まで（TEL 0238-21-6226）。</p>
+    </div>
+    <div class="access-grid">
+      <div class="access-card">
+        <span class="num">01</span>
+        <h4>道の駅米沢 総合観光案内所</h4>
+        <p>米沢中央IC直結。米沢観光のスタート地点として人気。</p>
+      </div>
+      <div class="access-card">
+        <span class="num">02</span>
+        <h4>米沢駅 ASK</h4>
+        <p>JR米沢駅構内 観光案内所。新幹線・在来線でのご来訪時に。</p>
+      </div>
+      <div class="access-card">
+        <span class="num">03</span>
+        <h4>米沢観光コンベンション協会</h4>
+        <p>上杉神社境内・上杉城史苑。観光ついでに購入OK。</p>
+      </div>
+      <div class="access-card">
+        <span class="num">04</span>
+        <h4>山形交通 米沢営業所</h4>
+        <p>米沢駅前。バス事業者の窓口で確実に入手。</p>
+      </div>
+      <div class="access-card">
+        <span class="num">05</span>
+        <h4>車内（運転手から購入）</h4>
+        <p>山形交通バス・米沢市民バス車内でドライバーから直接購入可。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="ft-brand">360° よねざわオープンファクトリー</div>
+  <div class="ft-tag">米沢をひらく。　YONEZAWA</div>
+  <div class="ft-info">
+    <strong>第4回</strong>　2026年9月10日（木）〜13日（日）開催<br>
+    お問い合わせ：<strong>(一社)米沢観光コンベンション協会　TEL 0238-21-6226</strong>
+  </div>
+  <div class="ft-info">
+    公式サイト：<a href="https://www.360yonezawa.com/" target="_blank">www.360yonezawa.com</a>　／　Instagram：<a href="https://www.instagram.com/360yonezawa/" target="_blank">@360yonezawa</a>
+  </div>
+  <div class="ft-fine">主催：米沢上杉文化施設協議会　協賛：やまがた観光キャンペーン推進協議会・米沢市観光キャンペーン推進協議会</div>
+</footer>
+
+</body>
+</html>
