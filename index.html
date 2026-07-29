@@ -112,6 +112,32 @@ section{padding:120px 32px;position:relative}
 .collab-arrow{flex-shrink:0;font-size:16px;color:var(--accent);transition:transform .2s}
 .collab-note:hover .collab-arrow{transform:translateX(4px)}
 
+/* ===== BUS TOUR ===== */
+.tour-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:56px;align-items:start}
+.tour-fact{background:var(--bg-card);border:1px solid var(--line);padding:40px 34px;position:relative}
+.tour-fact::before{content:"OFFICIAL BUS TOUR";position:absolute;top:16px;right:20px;font-size:10px;letter-spacing:.2em;color:var(--ink-3);font-weight:500}
+.tour-fact .badge-bushou{display:inline-block;font-size:11px;letter-spacing:.08em;color:var(--accent);font-weight:600;border:1px solid var(--accent);padding:4px 12px;margin-bottom:18px}
+.tour-fact h3{font-family:"Noto Serif JP",serif;font-size:21px;font-weight:600;color:var(--ink);line-height:1.5;margin-bottom:22px;letter-spacing:.02em}
+.tour-fact .price-lead{padding:18px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-bottom:20px}
+.tour-fact .price-lead .who{font-size:12.5px;color:var(--ink-2);margin-right:8px}
+.tour-fact .price-lead .num{font-family:"Noto Serif JP",serif;font-size:38px;font-weight:600;color:var(--accent)}
+.tour-fact .price-lead .unit{font-size:13px;color:var(--ink-3);margin-left:4px}
+.tour-fact dl{display:grid;grid-template-columns:auto 1fr;gap:10px 16px;font-size:13px;line-height:1.7}
+.tour-fact dt{color:var(--ink-3);white-space:nowrap}
+.tour-fact dd{color:var(--ink-2)}
+.tour-fact .apply{margin-top:22px;padding-top:18px;border-top:1px dashed var(--line);font-size:12.5px;color:var(--ink-2);line-height:1.85}
+.tour-fact .apply strong{color:var(--accent)}
+.tour-timeline .tl-head{font-family:"Noto Serif JP",serif;font-size:15px;font-weight:600;color:var(--ink);margin-bottom:24px;letter-spacing:.02em;line-height:1.6}
+.tour-timeline ol{list-style:none;position:relative;margin-left:6px;border-left:2px solid var(--line)}
+.tour-timeline li{position:relative;padding:0 0 26px 28px}
+.tour-timeline li:last-child{padding-bottom:0}
+.tour-timeline li::before{content:"";position:absolute;left:-7px;top:4px;width:12px;height:12px;border-radius:50%;background:var(--accent);border:2px solid var(--bg-2)}
+.tour-timeline li.hub::before{background:var(--ink)}
+.tour-timeline .t-time{font-size:11.5px;color:var(--accent);font-weight:600;letter-spacing:.04em}
+.tour-timeline .t-place{font-size:15px;font-weight:600;color:var(--ink);margin:2px 0 3px;font-family:"Noto Serif JP",serif}
+.tour-timeline .t-desc{font-size:12.5px;color:var(--ink-2);line-height:1.75}
+.tour-note{margin-top:20px;font-size:12px;color:var(--ink-3);line-height:1.8;letter-spacing:.02em}
+
 /* ===== MAP ===== */
 .map-section{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .map-wrap{background:var(--bg-card);border:1px solid var(--line);padding:8px;position:relative}
@@ -289,6 +315,8 @@ footer a{color:var(--soft-y);border-bottom:1px solid rgba(248,229,194,.3)}
   .section-head h2{font-size:24px;line-height:1.5}
   .section-head .lead{font-size:13.5px}
   .pass-grid,.coupon-hero{grid-template-columns:1fr;gap:32px}
+  .tour-grid{grid-template-columns:1fr;gap:36px}
+  .tour-fact{padding:32px 24px}
   .pass-visual{padding:32px 24px}
   .pass-visual h3{font-size:28px}
   .pass-visual .price-row.main .yen .num{font-size:32px}
@@ -509,7 +537,7 @@ footer a{color:var(--soft-y);border-bottom:1px solid rgba(248,229,194,.3)}
           <div class="feat">
             <span class="feat-num">FEATURE 03</span>
             <h4>「よねざわウォーク」マップ無料配布</h4>
-            <p>米沢鶴城高校生が選ぶバス停近くのおススメスポットを4か国語（日・英・台・越）で掲載。観光案内所等で無料配布中。</p>
+            <p>米沢鶴城高校生が選ぶバス停近くのおススメスポットを4か国語（日・英・台・越）で掲載。2026年版は8月中の完成・配布を予定（時期は要確認）。観光案内所等で無料配布。</p>
           </div>
           <div class="feat">
             <span class="feat-num">FEATURE 04</span>
@@ -523,14 +551,48 @@ footer a{color:var(--soft-y);border-bottom:1px solid rgba(248,229,194,.3)}
   </div>
 </section>
 
-<section id="bustour" class="pass-section">
+<section id="bustour" class="pass-section" style="background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
   <div class="container">
     <div class="section-head">
-      <span class="num">02　バスツアー</span>
-      <h2>ガイドと巡る、<br>公式バスツアーという選択。</h2>
-      <p class="lead">自分のペースで巡るなら「よねざわ乗るパス」。ガイド付きでまとめて巡るなら公式バスツアーが便利です。第4回では会場エリアをつなぐ循環バスの運行に加え、「やまがた愛の武将隊と行くオープンファクトリーバスツアー」の実施が公式ページで案内されています。</p>
+      <span class="num">02　公式バスツアー</span>
+      <h2>やまがた愛の武将隊と巡る、<br>工場見学会バスツアー。</h2>
+      <p class="lead">自分のペースで巡るなら「よねざわ乗るパス」。ガイド付きでまとめて巡るなら公式バスツアーが便利です。第4回では、戦国武将隊「やまがた愛の武将隊」がご案内する日帰りバスツアーを<strong style="color:var(--accent)">2026年9月12日（土）</strong>に開催します。</p>
     </div>
-    <div class="pass-info">
+    <div class="tour-grid">
+      <div class="tour-fact">
+        <span class="badge-bushou">やまがた愛の武将隊 と巡る!!</span>
+        <h3>360°よねざわオープンファクトリー<br>工場見学会バスツアー</h3>
+        <div class="price-lead"><span class="who">大人 おひとり様</span><span class="num">14,000</span><span class="unit">円（税込）</span></div>
+        <dl>
+          <dt>出発日</dt><dd>2026年9月12日（土）　日帰り</dd>
+          <dt>集合</dt><dd>米沢駅 東口／受付 9:30・出発 9:50</dd>
+          <dt>解散</dt><dd>米沢駅　16:00 頃</dd>
+          <dt>含むもの</dt><dd>昼食代・体験料・保険代 など</dd>
+          <dt>定員</dt><dd>1名様から申込OK（最少催行 15名様）</dd>
+        </dl>
+        <div class="apply">
+          <strong>申込締切：9月7日（月）17:00 まで</strong><br>
+          旅行企画・実施：（一社）米沢観光コンベンション協会【道の駅 米沢】総合観光案内所<br>
+          お申込み・お問い合わせ：<strong>TEL 0238-40-8400</strong>（9:00〜18:00）
+        </div>
+      </div>
+      <div class="tour-timeline">
+        <div class="tl-head">行程（9/12 土）　※米沢駅 東口に 9:30 までにご集合ください</div>
+        <ol>
+          <li class="hub"><div class="t-time">受付 9:30 ／ 出発 9:50</div><div class="t-place">米沢駅（東口）</div></li>
+          <li><div class="t-time">見学 10:00〜10:50</div><div class="t-place">めーかーずフェスタ</div><div class="t-desc">ものづくり技術の祭典（山形大学 同時開催）</div></li>
+          <li><div class="t-time">体験 11:00〜11:50</div><div class="t-place">花角味噌醸造</div><div class="t-desc">4種味噌の食べ比べ</div></li>
+          <li><div class="t-time">昼食 12:00〜13:00</div><div class="t-place">SLOUP</div><div class="t-desc">スープ専門店でランチ</div></li>
+          <li><div class="t-time">体験 13:20〜14:20</div><div class="t-place">川島印刷</div><div class="t-desc">ミニメモづくり</div></li>
+          <li><div class="t-time">休憩</div><div class="t-place">道の駅 米沢</div><div class="t-desc">休憩・お買い物</div></li>
+          <li><div class="t-time">体験 15:00〜15:50</div><div class="t-place">ニューテックシンセイ</div><div class="t-desc">もくロックストラップづくり</div></li>
+          <li class="hub"><div class="t-time">到着 16:00</div><div class="t-place">米沢駅</div></li>
+        </ol>
+        <p class="tour-note">※ 行程・時刻は変更になる場合があります。最新情報・お申込みは道の駅 米沢 総合観光案内所（TEL 0238-40-8400）へ。</p>
+      </div>
+    </div>
+
+    <div class="pass-info" style="margin-top:56px">
       <div class="features">
         <div class="feat">
           <span class="feat-num">循環バス</span>
@@ -538,19 +600,19 @@ footer a{color:var(--soft-y);border-bottom:1px solid rgba(248,229,194,.3)}
           <p>参加企業が集まるエリアをつなぐ循環バスの運行が予定されています。運行日・時刻・停車エリアは公式ページで順次公開されます。</p>
         </div>
         <div class="feat">
-          <span class="feat-num">ガイドツアー</span>
-          <h4>やまがた愛の武将隊と行くバスツアー</h4>
-          <p>「やまがた愛の武将隊」と一緒に参加企業を巡る、ガイド付きの公式バスツアー。コース・料金・定員・予約方法は公式ページをご確認ください。</p>
+          <span class="feat-num">もう一つのツアー</span>
+          <h4>米沢商工会議所のツアーも</h4>
+          <p>米沢商工会議所による関連ツアーも案内されています。詳細・お申込みは<a href="https://www.ycci.or.jp/?p=16202" target="_blank" style="color:var(--accent);border-bottom:1px solid currentColor">米沢商工会議所のページ →</a>をご覧ください。</p>
         </div>
         <div class="feat">
           <span class="feat-num">INFO</span>
-          <h4>確定情報は後日公開</h4>
-          <p>バスツアー・循環バスの確定情報は公式サイトおよび公式SNSで発表されます。決まり次第、本ページにも反映します。</p>
+          <h4>最新・確定情報は公式へ</h4>
+          <p>バスツアー・循環バスの募集状況や最新情報は、公式サイトおよび公式SNSで発表されます。決まり次第、本ページにも反映します。</p>
         </div>
       </div>
       <a class="collab-note" href="https://www.360yonezawa.com/" target="_blank">
         <span class="collab-tag">OFFICIAL</span>
-        <span class="collab-text">バスツアー・循環バスの最新情報、全98プログラム（7/1時点）、同時開催の「めーかーずフェスタ」（山形大学）や置賜民俗資料館の期間限定体験プログラムは、公式ページでご覧いただけます。</span>
+        <span class="collab-text">バスツアー・循環バスの最新情報、全プログラム、同時開催の「めーかーずフェスタ」（山形大学）などは、公式ページでご覧いただけます。</span>
         <span class="collab-arrow">→</span>
       </a>
     </div>
@@ -715,6 +777,10 @@ footer a{color:var(--soft-y);border-bottom:1px solid rgba(248,229,194,.3)}
       <p class="lead">バス停を中心に参加企業をグルーピング。各カードをクリックすると、事業者の公式サイトに遷移します。</p>
     </div>
 
+    <div class="outrange-note" style="margin-top:0;margin-bottom:56px">
+      見学・ワークショップには<strong>要予約</strong>のものや、<strong>学生限定の見学</strong>（新杵屋・平山孫兵衛商店 ほか）もあります。実施日・内容・予約要否は各事業者の公式ページ、または<a href="https://www.360yonezawa.com/" target="_blank" style="color:var(--accent);border-bottom:1px solid currentColor">360°よねざわオープンファクトリー公式サイト</a>で最新情報をご確認ください。「要確認」表記は、コンテンツシートで所在地・実施日が未確定の事業者です。
+    </div>
+
     <!-- A: 米沢駅前東口 -->
     <div class="cluster">
       <div class="cluster-head">
@@ -726,22 +792,22 @@ footer a{color:var(--soft-y);border-bottom:1px solid rgba(248,229,194,.3)}
         <div class="badge">起点ハブ</div>
       </div>
       <div class="biz-grid">
-        <a class="biz-card unverified" href="#" target="_blank">
+        <a class="biz-card" href="https://www.360yonezawa.com/" target="_blank">
           <div class="cat">食品</div>
           <div class="name">有限会社 新杵屋</div>
           <div class="addr">東3-1-1（米沢駅東口 徒歩1分）</div>
           <span class="walk">徒歩 1分</span>
           <div class="days"><span class="day on">10木</span><span class="day on">11金</span><span class="day on">12土</span><span class="day on">13日</span></div>
-          <div class="summary">炊飯工場見学＋お弁当製造体験（10:00〜、60〜120分）※実施日要確認</div>
-          <div class="link">公式サイト<span class="arrow">→</span></div>
+          <div class="summary">米沢の駅弁「牛肉どまん中」で知られる食品メーカー。※工場見学は学生限定。</div>
+          <div class="link">公式ページ<span class="arrow">→</span></div>
         </a>
-        <a class="biz-card" href="https://nitorito.com/" target="_blank">
+        <a class="biz-card unverified" href="https://nitorito.com/" target="_blank">
           <div class="cat">米沢織</div>
           <div class="name">株式会社 nitorito</div>
           <div class="addr">米沢駅東口前（昨年実績）</div>
           <span class="walk">徒歩 1分</span>
           <div class="days"><span class="day unk">10木</span><span class="day unk">11金</span><span class="day unk">12土</span><span class="day unk">13日</span></div>
-          <div class="summary">米沢織×現代生活のプロダクトブランド。開催日要事業者確認。</div>
+          <div class="summary">米沢織を現代の暮らしに届けるプロダクトブランド。※所在地・実施日は要確認。</div>
           <div class="link">公式サイト<span class="arrow">→</span></div>
         </a>
       </div>
@@ -764,7 +830,7 @@ footer a{color:var(--soft-y);border-bottom:1px solid rgba(248,229,194,.3)}
           <div class="addr">大町1-2-23</div>
           <span class="walk">大町一丁目 徒歩 2分</span>
           <div class="days"><span class="day on">10木</span><span class="day on">11金</span><span class="day on">12土</span><span class="day on">13日</span></div>
-          <div class="summary">4種味噌食べ比べ／FDみそ汁詰め放題／きゅうり一本漬け／親子きゅうり漬けWS</div>
+          <div class="summary">味噌の醸造元。味噌・関連商品の製造販売。※見学・体験の詳細・予約要否は公式ページでご確認ください。</div>
           <div class="link">公式サイト<span class="arrow">→</span></div>
         </a>
         <a class="biz-card" href="https://shop.hirayama-magobee.com/" target="_blank">
@@ -773,7 +839,7 @@ footer a{color:var(--soft-y);border-bottom:1px solid rgba(248,229,194,.3)}
           <div class="addr">大町2-2-22</div>
           <span class="walk">大町一丁目 徒歩 3分</span>
           <div class="days"><span class="day off">10木</span><span class="day on">11金</span><span class="day on">12土</span><span class="day off">13日</span></div>
-          <div class="summary">しょうゆ・調味料の味比べ（10:00–15:00、12〜13時除く）</div>
+          <div class="summary">醤油・調味料の醸造元。出展は9/11(金)・12(土)。※見学は学生限定。</div>
           <div class="link">公式サイト<span class="arrow">→</span></div>
         </a>
         <a class="biz-card unverified" href="https://www.sake-toko.co.jp/" target="_blank">
@@ -782,7 +848,7 @@ footer a{color:var(--soft-y);border-bottom:1px solid rgba(248,229,194,.3)}
           <div class="addr">大町近接（昨年実績）</div>
           <span class="walk">徒歩 3〜5分</span>
           <div class="days"><span class="day unk">10木</span><span class="day unk">11金</span><span class="day unk">12土</span><span class="day unk">13日</span></div>
-          <div class="summary">銘酒「東光」醸造元。住所・開催日要事業者確認。</div>
+          <div class="summary">銘酒「東光」の酒造元。※所在地・実施日は要確認。</div>
           <div class="link">公式サイト<span class="arrow">→</span></div>
         </a>
         <a class="biz-card unverified" href="https://www.sake-toko.co.jp/" target="_blank">
@@ -791,7 +857,7 @@ footer a{color:var(--soft-y);border-bottom:1px solid rgba(248,229,194,.3)}
           <div class="addr">大町近接（小嶋総本店と同運営）</div>
           <span class="walk">徒歩 3〜5分</span>
           <div class="days"><span class="day unk">10木</span><span class="day unk">11金</span><span class="day unk">12土</span><span class="day unk">13日</span></div>
-          <div class="summary">酒蔵見学・試飲。開催日要事業者確認。</div>
+          <div class="summary">「東光」の酒造資料館（小嶋総本店運営）。※所在地・実施日は要確認。</div>
           <div class="link">公式サイト<span class="arrow">→</span></div>
         </a>
       </div>
@@ -814,7 +880,7 @@ footer a{color:var(--soft-y);border-bottom:1px solid rgba(248,229,194,.3)}
           <div class="addr">松が岬2-4-8</div>
           <span class="walk">徒歩 5分</span>
           <div class="days"><span class="day on">10木</span><span class="day on">11金</span><span class="day on">12土</span><span class="day off">13日</span></div>
-          <div class="summary">工場見学・販売・展示・くるみボタンWS（10:00/11:00/14:00/15:00ほか）</div>
+          <div class="summary">米沢織の織元。先染め織物の製造・展示販売。出展は9/10木〜12土。※見学・体験の詳細は公式ページでご確認ください。</div>
           <div class="link">公式サイト<span class="arrow">→</span></div>
         </a>
         <a class="biz-card" href="https://nitta-yonezawa.com/" target="_blank">
@@ -823,7 +889,7 @@ footer a{color:var(--soft-y);border-bottom:1px solid rgba(248,229,194,.3)}
           <div class="addr">松が岬2-3-36</div>
           <span class="walk">徒歩 6分</span>
           <div class="days"><span class="day on">10木</span><span class="day on">11金</span><span class="day on">12土</span><span class="day on">13日</span></div>
-          <div class="summary">製造工程見学／紅花染め体験／ミニタペストリー／手織りブローチ／ギャラリー＆ショップ</div>
+          <div class="summary">米沢織の織元。ギャラリー＆ショップを併設。※見学・体験の詳細・予約要否は公式ページでご確認ください。</div>
           <div class="link">公式サイト<span class="arrow">→</span></div>
         </a>
         <a class="biz-card" href="https://www.kawasaki-print.com/" target="_blank">
@@ -832,7 +898,7 @@ footer a{color:var(--soft-y);border-bottom:1px solid rgba(248,229,194,.3)}
           <div class="addr">松が岬2-3-17</div>
           <span class="walk">徒歩 5分</span>
           <div class="days"><span class="day on">10木</span><span class="day on">11金</span><span class="day off">12土</span><span class="day off">13日</span></div>
-          <div class="summary">9/12(土)・9/13(日)は実施外。木金のみの出展。</div>
+          <div class="summary">印刷会社（ワクワクラボ）。出展は9/10木・11金のみ（土日は実施外）。</div>
           <div class="link">公式サイト<span class="arrow">→</span></div>
         </a>
         <a class="biz-card unverified" href="https://yamakuchi.co.jp/" target="_blank">
@@ -841,7 +907,7 @@ footer a{color:var(--soft-y);border-bottom:1px solid rgba(248,229,194,.3)}
           <div class="addr">松が岬近接（昨年実績）</div>
           <span class="walk">徒歩 5分</span>
           <div class="days"><span class="day unk">10木</span><span class="day unk">11金</span><span class="day unk">12土</span><span class="day unk">13日</span></div>
-          <div class="summary">EC「yozando.jp」運営。住所・開催日要事業者確認。</div>
+          <div class="summary">米沢織の織元。オンラインショップ「よぞうどう（yozando.jp）」を運営。※所在地・実施日は要確認。</div>
           <div class="link">公式サイト<span class="arrow">→</span></div>
         </a>
         <a class="biz-card unverified" href="https://www.parcomode.com/" target="_blank">
@@ -850,7 +916,7 @@ footer a{color:var(--soft-y);border-bottom:1px solid rgba(248,229,194,.3)}
           <div class="addr">松が岬近接（昨年実績）</div>
           <span class="walk">徒歩 5分</span>
           <div class="days"><span class="day unk">10木</span><span class="day unk">11金</span><span class="day unk">12土</span><span class="day unk">13日</span></div>
-          <div class="summary">米沢織テキスタイル＆プロダクト。住所・開催日要事業者確認。</div>
+          <div class="summary">米沢織のテキスタイル・プロダクトを手がける織元。※所在地・実施日は要確認。</div>
           <div class="link">公式サイト<span class="arrow">→</span></div>
         </a>
       </div>
@@ -873,16 +939,16 @@ footer a{color:var(--soft-y);border-bottom:1px solid rgba(248,229,194,.3)}
           <div class="addr">御廟1-2-37</div>
           <span class="walk">徒歩 3分</span>
           <div class="days"><span class="day on">10木</span><span class="day on">11金</span><span class="day on">12土</span><span class="day on">13日</span></div>
-          <div class="summary">藍染め体験（10:00〜120分／各日10名）／工房見学（10:00–16:00）</div>
+          <div class="summary">藍染めなどの染織工房。工房見学・体験。※要予約の体験あり。詳細・予約要否は公式ページでご確認ください。</div>
           <div class="link">公式サイト<span class="arrow">→</span></div>
         </a>
         <a class="biz-card" href="https://silky-living.co.jp/" target="_blank">
-          <div class="cat">米沢織</div>
+          <div class="cat">寝具・インテリア</div>
           <div class="name">株式会社 シルキーリビング</div>
           <div class="addr">直江町6-12</div>
           <span class="walk">徒歩 4分</span>
           <div class="days"><span class="day on">10木</span><span class="day on">11金</span><span class="day on">12土</span><span class="day on">13日</span></div>
-          <div class="summary">米沢織の生地・カーテン・インテリア。通期工房オープン（要事業者確認）</div>
+          <div class="summary">羽毛ふとん・オーダーカーテンの製造・販売・リフォーム・クリーニングを手掛ける会社。</div>
           <div class="link">公式サイト<span class="arrow">→</span></div>
         </a>
       </div>
@@ -899,14 +965,14 @@ footer a{color:var(--soft-y);border-bottom:1px solid rgba(248,229,194,.3)}
         <div class="badge">市役所周辺</div>
       </div>
       <div class="biz-grid">
-        <a class="biz-card unverified" href="#" target="_blank">
+        <a class="biz-card" href="https://www.360yonezawa.com/" target="_blank">
           <div class="cat">米沢織</div>
           <div class="name">粟野商事株式会社／JUYOUKAN</div>
           <div class="addr">中央1-7-32</div>
           <span class="walk">徒歩 2分</span>
           <div class="days"><span class="day on">10木</span><span class="day on">11金</span><span class="day on">12土</span><span class="day on">13日</span></div>
-          <div class="summary">織元ブランド「季織苑工房」候補。公式HP要事業者確認。</div>
-          <div class="link">公式サイト<span class="arrow">→</span></div>
+          <div class="summary">米沢織の織元。ブランド「JUYOUKAN」。出展は9/10木〜13日の全日。</div>
+          <div class="link">公式ページ<span class="arrow">→</span></div>
         </a>
       </div>
     </div>
@@ -928,7 +994,7 @@ footer a{color:var(--soft-y);border-bottom:1px solid rgba(248,229,194,.3)}
           <div class="addr">城南3-1-48</div>
           <span class="walk">徒歩 3分</span>
           <div class="days"><span class="day on">10木</span><span class="day on">11金</span><span class="day on">12土</span><span class="day off">13日</span></div>
-          <div class="summary">9/13(日)は実施外。9/10木〜12土の出展。</div>
+          <div class="summary">米沢織の織元。出展は9/10木〜12土（日曜は実施外）。</div>
           <div class="link">公式サイト<span class="arrow">→</span></div>
         </a>
       </div>
@@ -951,7 +1017,7 @@ footer a{color:var(--soft-y);border-bottom:1px solid rgba(248,229,194,.3)}
           <div class="addr">本町1-5-21-1階</div>
           <span class="walk">徒歩 1分</span>
           <div class="days"><span class="day unk">10木</span><span class="day unk">11金</span><span class="day unk">12土</span><span class="day unk">13日</span></div>
-          <div class="summary">米沢織のアウトレット直売所。開催日要事業者確認。</div>
+          <div class="summary">米沢織のアウトレット直売所。※実施日は要確認。</div>
           <div class="link">Facebookページ<span class="arrow">→</span></div>
         </a>
       </div>
@@ -974,7 +1040,7 @@ footer a{color:var(--soft-y);border-bottom:1px solid rgba(248,229,194,.3)}
           <div class="addr">泉町2-2-2819</div>
           <span class="walk">徒歩 5分</span>
           <div class="days"><span class="day on">10木</span><span class="day on">11金</span><span class="day off">12土</span><span class="day off">13日</span></div>
-          <div class="summary">9/12(土)・9/13(日)は実施外。木金のみの出展。</div>
+          <div class="summary">産業用機械要素（プーリ・変減速機など）のメーカー。出展は9/10木・11金のみ（土日は実施外）。</div>
           <div class="link">公式サイト<span class="arrow">→</span></div>
         </a>
       </div>
@@ -1015,68 +1081,59 @@ footer a{color:var(--soft-y);border-bottom:1px solid rgba(248,229,194,.3)}
   <div class="container">
     <div class="section-head">
       <span class="num">06　モデルコース</span>
-      <h2>のるパス1日券で<br>米沢の作り手を巡る5コース。</h2>
-      <p class="lead">乗るパス対象の参加企業12社をすべて網羅した5つのモデルコース。会期4日間（木金土日）の出展状況に合わせて選べます。</p>
+      <h2>のるパス1日券で<br>米沢の作り手を巡る4コース。</h2>
+      <p class="lead">曜日ごとの出展状況に合わせて選べる、それぞれ単独で完結する4つのモデルコース。すべて米沢駅前東口を発着点に、のるパス（520円）1日券で巡れます。</p>
     </div>
     <div class="course-grid">
       <div class="course-card">
-        <span class="tag">土曜・半日</span>
-        <h3>A. 大町〜上杉神社〜御廟ぐるり</h3>
-        <p class="meta">所要 約3.5h　／　訪問可 6社</p>
-        <ol>
-          <li>9:22 米沢駅前東口（循環右回り 3便）出発</li>
-          <li>9:36 大町一丁目 着 ▶ 花角味噌 ＋ 平山孫兵衛</li>
-          <li>10:55 上杉神社前 ▶ 行方織物 ＋ よねざわ新田</li>
-          <li>12:19 御廟所西口 ▶ わくわく舘 ＋ シルキーリビング</li>
-          <li>13:15 米沢駅前東口 着 ▶ 昼食・お土産</li>
-        </ol>
-      </div>
-      <div class="course-card">
-        <span class="tag">土曜・半日</span>
-        <h3>B. 駅前〜中央〜城南〜本町</h3>
-        <p class="meta">所要 約3h　／　訪問可 4社（A〜Hの未踏エリア網羅）</p>
-        <ol>
-          <li>9:00 米沢駅前東口 ▶ 新杵屋（駅前A・徒歩1分）</li>
-          <li>10:00 循環左回り 3便 → 中央一丁目 ▶ 粟野商事（中央E）</li>
-          <li>10:45 循環右回り → 城南二丁目 ▶ 近賢織物（城南F・土曜まで）</li>
-          <li>11:30 学園都市線 → 本町 ▶ おりじん（本町G）</li>
-          <li>12:00 米沢駅前東口 着</li>
-        </ol>
-      </div>
-      <div class="course-card">
         <span class="tag">土曜・終日</span>
-        <h3>C. 土曜 全エリア完走（8〜10社）</h3>
-        <p class="meta">所要 約7h　／　A＋B 統合＋自由時間</p>
+        <h3>① 土曜まるごと完走コース</h3>
+        <p class="meta">所要 約7h　／　訪問可 9社</p>
         <ol>
-          <li>午前：A コース（9:22〜13:15）</li>
-          <li>昼食：米沢駅前 or ナセBA前 周辺で米沢牛・米沢ラーメン</li>
-          <li>午後：B コース（14:00〜17:00）</li>
-          <li>夕方：上杉神社・上杉城史苑で自由散策</li>
+          <li>9:00 米沢駅前東口 ▶ 新杵屋（駅前・徒歩1分）</li>
+          <li>9:22 循環右回り → 大町一丁目 ▶ 花角味噌＋平山孫兵衛</li>
+          <li>10:55 上杉神社前 ▶ 行方織物＋よねざわ新田</li>
+          <li>12:00 上杉神社・上杉城史苑周辺で昼食＆散策</li>
+          <li>13:15 御廟所西口 ▶ わくわく舘＋シルキーリビング</li>
+          <li>14:30 中央一丁目 ▶ 粟野商事／JUYOUKAN</li>
+          <li>15:30 城南二丁目 ▶ 近賢織物</li>
           <li>17:00 米沢駅前東口 解散</li>
         </ol>
       </div>
       <div class="course-card">
-        <span class="tag">平日（木金）限定</span>
-        <h3>D. 平日コース・東部＋上杉神社前</h3>
-        <p class="meta">所要 約4h　／　訪問可 7社（木金限定企業を含む）</p>
+        <span class="tag">土曜・半日</span>
+        <h3>② 城下ぐるり半日コース</h3>
+        <p class="meta">所要 約3.5h　／　訪問可 6社</p>
         <ol>
-          <li>9:30 米沢駅前東口 → 万世線/学園都市線で東一丁目 ▶ 三木ベルテック（H・木金のみ）</li>
-          <li>10:30 学園都市線 → 上杉神社前 ▶ カワサキ印刷（C・木金のみ）＋行方織物＋よねざわ新田</li>
-          <li>12:30 循環左回り → 大町 ▶ 花角味噌＋平山孫兵衛（金のみ）</li>
-          <li>13:30 循環右回り → 城南二丁目 ▶ 近賢織物（F・木金）</li>
+          <li>9:22 米沢駅前東口（循環右回り 3便）出発</li>
+          <li>9:36 大町一丁目 ▶ 花角味噌＋平山孫兵衛</li>
+          <li>10:55 上杉神社前 ▶ 行方織物＋よねざわ新田</li>
+          <li>12:19 御廟所西口 ▶ わくわく舘＋シルキーリビング</li>
+          <li>13:15 米沢駅前東口 着 ▶ 昼食・お土産</li>
+        </ol>
+      </div>
+      <div class="course-card">
+        <span class="tag">平日（木金）限定</span>
+        <h3>③ 平日・ものづくり体感コース</h3>
+        <p class="meta">所要 約4h　／　訪問可 6社（木金限定企業を含む）</p>
+        <ol>
+          <li>9:30 米沢駅前東口 → 学園都市線で東一丁目 ▶ 三木ベルテック（木金のみ）</li>
+          <li>10:30 学園都市線 → 上杉神社前 ▶ カワサキ印刷（木金のみ）＋行方織物＋よねざわ新田</li>
+          <li>12:30 循環左回り → 大町一丁目 ▶ 花角味噌（金は平山孫兵衛も）</li>
+          <li>13:30 循環右回り → 城南二丁目 ▶ 近賢織物</li>
           <li>14:30 米沢駅前東口 着</li>
         </ol>
       </div>
       <div class="course-card">
         <span class="tag">日曜・半日</span>
-        <h3>E. 日曜オープン6社＋お土産</h3>
-        <p class="meta">所要 約4h　／　通期出展6社の確実コース</p>
+        <h3>④ 日曜オープン確実コース</h3>
+        <p class="meta">所要 約4h　／　通期出展6社を確実に</p>
         <ol>
-          <li>9:00 米沢駅前東口 ▶ 新杵屋（A・通期）</li>
-          <li>9:22 循環右回り 3便 → 大町一丁目 ▶ 花角味噌（B・通期）</li>
-          <li>9:47 上杉神社前 ▶ よねざわ新田（C・通期）</li>
-          <li>11:03 御廟所西口 ▶ わくわく舘＋シルキーリビング（D・通期）</li>
-          <li>12:30 循環左回り → 中央一丁目 ▶ 粟野商事（E・通期）</li>
+          <li>9:00 米沢駅前東口 ▶ 新杵屋</li>
+          <li>9:22 循環右回り 3便 → 大町一丁目 ▶ 花角味噌</li>
+          <li>9:47 上杉神社前 ▶ よねざわ新田</li>
+          <li>11:03 御廟所西口 ▶ わくわく舘＋シルキーリビング</li>
+          <li>12:30 循環左回り → 中央一丁目 ▶ 粟野商事／JUYOUKAN</li>
           <li>13:15 米沢駅前東口 着</li>
         </ol>
       </div>
@@ -1090,19 +1147,13 @@ footer a{color:var(--soft-y);border-bottom:1px solid rgba(248,229,194,.3)}
     <div class="section-head">
       <span class="num">07　のるパス対象外エリア</span>
       <h2>外周エリアの参加企業は<br>車・タクシーでアクセス。</h2>
-      <p class="lead">花沢・八幡原・川井・竹井・窪田に所在する以下9社は、のるパスでは到達できません。自家用車・タクシー・レンタサイクルでのアクセスとなります。</p>
+      <p class="lead">花沢・八幡原・川井・竹井・窪田に所在する以下8社は、のるパスでは到達できません。自家用車・タクシー・レンタサイクルでのアクセスとなります。</p>
     </div>
     <div class="outrange-grid">
       <a class="out-card" href="https://www.frontier.maxell.co.jp" target="_blank">
         <span class="area">花沢</span>
         <div class="name">マクセルフロンティア</div>
         <div class="addr">花沢3091-6</div>
-        <span class="arrow">公式サイト →</span>
-      </a>
-      <a class="out-card" href="https://www.aita-kouyouju.com/" target="_blank">
-        <span class="area">花沢</span>
-        <div class="name">アイタ工業</div>
-        <div class="addr">花沢町2845</div>
         <span class="arrow">公式サイト →</span>
       </a>
       <a class="out-card" href="https://nt-shinsei.com/" target="_blank">
@@ -1151,6 +1202,9 @@ footer a{color:var(--soft-y);border-bottom:1px solid rgba(248,229,194,.3)}
     <div class="outrange-note">
       <strong>井上精工（窪田）について：</strong>のるパス対象「窪田行」がありますが、<strong>平日のみ運行</strong>のため土日（9/12・13）は利用不可。9/10木・11金の平日ならアクセス可能です。
     </div>
+    <div class="outrange-note" style="margin-top:20px">
+      <strong>バスツアーで訪問できます：</strong>花沢の<strong>ニューテックシンセイ・川島印刷</strong>は、9/12(土)の<a href="#bustour" style="color:var(--accent);border-bottom:1px solid currentColor">「やまがた愛の武将隊と巡る工場見学会バスツアー」</a>の行程に含まれます（花角味噌醸造も訪問）。車がない方はツアーのご利用が便利です。
+    </div>
   </div>
 </section>
 
@@ -1180,6 +1234,9 @@ footer a{color:var(--soft-y);border-bottom:1px solid rgba(248,229,194,.3)}
   </div>
   <div class="ft-info">
     公式サイト：<a href="https://www.360yonezawa.com/" target="_blank">www.360yonezawa.com</a>　／　Instagram：<a href="https://www.instagram.com/360yonezawa/" target="_blank">@360yonezawa</a>
+  </div>
+  <div class="ft-info">
+    米沢に泊まるなら：<a href="https://nitorito.com/yonezawa-onsen/" target="_blank">米沢・宿泊＆温泉ガイド →</a>
   </div>
   <div class="ft-fine">主催：米沢上杉文化施設協議会　協賛：やまがた観光キャンペーン推進協議会・米沢市観光キャンペーン推進協議会</div>
   <div class="ft-fine">路線・停留所情報出典：<a href="https://www.pref.yamagata.jp/020057/kurashi/kendo/kotsuseisaku/kokyokotsu_gtfs-jp.html" target="_blank">米沢市公共交通GTFS-JPデータ</a>（CC BY 4.0）／道路ジオメトリ：© OpenStreetMap contributors</div>
